@@ -1,8 +1,9 @@
 # Vudo
 
-Microsoft Northwind Database UI with Vue.js
+Event Attendance Tracker - Corel Ministry Int'l
 
-[![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)](https://vuejs.org/guide/introduction.html)
+[![VueJS](https://img.shields.io/badge/vue-3.x-41b883.svg)](https://vuejs.org/guide/introduction.html)
+[![TypeScript](https://img.shields.io/badge/typescript-5.x-blue.svg)](https://www.typescriptlang.org/docs/)
 
 ## Clone the project
 
@@ -13,7 +14,3 @@ $ npm install
 $ npm run format
 $ npm run dev
 ```
-
-### Documentation 
-
-Visit https://docs.yugabyte.com/preview/sample-data/northwind/
