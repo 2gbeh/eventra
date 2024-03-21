@@ -13,7 +13,7 @@
   ],
   "include": ["./src/**/*"],
   "compilerOptions": {
-    "lib": ["ES2021.String"],
+    "lib": ["ES2021.String", "es2015", "dom"],
     "module": "NodeNext",
     "baseUrl": "src",
     "paths": {
