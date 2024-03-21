@@ -8,7 +8,7 @@ export default [
       {
         path: '',
         component: () => import('@/views/WelcomeView.vue'),
-        meta: { title: 'Welcome' }
+        meta: { title: 'Event Attendance Tracker' }
       },
       {
         path: 'login',
