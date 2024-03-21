@@ -1,5 +1,6 @@
 // import M from "@/constants/MOCK";
 export default Object.freeze({
+  sitemap: 0,
   auth: 1,
   login: 0,
   logout: 0,

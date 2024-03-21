@@ -14,3 +14,14 @@ $ npm install
 $ npm run format
 $ npm run dev
 ```
+
+
+```
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $const: Record<string, unknown>;
+  }
+}
+
+export {}  // Important! See note.
+```

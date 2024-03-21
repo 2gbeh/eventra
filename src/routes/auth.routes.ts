@@ -1,4 +1,4 @@
-import AuthLayout from '@/modules/auth/AuthLayout.vue'
+import AuthLayout from '@/app/auth/AuthLayout.vue'
 
 export default [
   {
@@ -7,17 +7,18 @@ export default [
     children: [
       {
         path: '',
+        component: () => import('@/views/WelcomeView.vue'),
+        meta: { title: 'Welcome' }
+      },
+      {
+        path: 'login',
         component: () => import('@/views/LoginView.vue'),
         meta: { title: 'Log in' }
       },
       {
-        path: 'login',
-        redirect: '/'
-      },
-      {
         path: 'register',
         component: () => import('@/views/RegisterView.vue'),
-        meta: { title: 'register' }
+        meta: { title: 'Register' }
       },
       {
         path: 'forgot-passsword',
