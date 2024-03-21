@@ -4,7 +4,8 @@
     <TheLogo size="100" has-border />
     <!--  -->
     <hgroup>
-      <h1 class=""> {{ $APP.name }}</h1>
+      <!-- <h1 class="">assemb.ly{{ $APP.name }}</h1> -->
+      <h1 class="">assemb.ly</h1>
       <p class="">{{ $APP.summary }}</p>
     </hgroup>
   </main>
