@@ -1,4 +1,4 @@
-type THashMap  = Record<string, unknown>
+type THashMap  = Record<string, string | number | number[]>
 
 declare module '@vue/runtime-core' {
   interface ComponentCustomProperties {

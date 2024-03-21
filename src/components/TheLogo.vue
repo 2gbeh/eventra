@@ -20,7 +20,7 @@ const styles = {
 
 <template>
   <figure>
-    <img src="/icon.png" :alt="$APP.name" :style="styles" />
+    <img src="/icon.png" :alt="$APP.name.toString()" :style="styles" />
     <figcaption v-if="hasTitle">{{ $APP.summary }}</figcaption>
   </figure>
 </template>
