@@ -9,7 +9,9 @@ import router from "./routes/router";
 import TheLogo from "./components/TheLogo.vue";
 import APP from "./constants/APP";
 import PATH from "./constants/PATH";
+import COLOR from "./constants/COLOR";
 import M from "./constants/MOCK";
+import './types/globalProperties.type'
 
 // APP INSTANCE
 const app = createApp(App);
@@ -17,15 +19,16 @@ const app = createApp(App);
 // CONSTANTS
 app.config.globalProperties.$APP = APP;
 app.config.globalProperties.$PATH = PATH;
+app.config.globalProperties.$COLOR = COLOR;
 app.config.globalProperties.$M = M;
 
 // COMPONENTS
-app.component("the-logo", TheLogo);
+app.component("TheLogo", TheLogo);
 
 // MIDDLEWARE
 app.use(createPinia());
 app.use(router);
 app.use(twMergeDirective);
 
-// 
-app.mount("#app");
+//
+app.mount("#root");
