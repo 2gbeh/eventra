@@ -6,7 +6,7 @@ import twMergeDirective from "tailwind-merge-vue-directive";
 //
 import App from "./App.vue";
 import router from "./routes/router";
-import TheLogo from "./components/TheLogo.vue";
+import TheLogo from "./components/TheLogo/index.vue";
 import APP from "./constants/APP";
 import PATH from "./constants/PATH";
 import COLOR from "./constants/COLOR";
