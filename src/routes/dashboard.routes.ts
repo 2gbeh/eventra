@@ -1,4 +1,4 @@
-import DashboardLayout from '@/modules/dashboard/DashboardLayout.vue'
+import DashboardLayout from '@/app/dashboard/DashboardLayout.vue'
 
 export default [
   {
@@ -9,7 +9,6 @@ export default [
         path: '',
         component: () => import('@/views/HomeView.vue'),
         meta: { title: 'Home' }
-
       },
       {
         path: 'profile',
@@ -20,6 +19,6 @@ export default [
   },
   {
     path: '/home',
-    redirect: '/dashboard',
+    redirect: '/dashboard'
   }
 ]

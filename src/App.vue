@@ -1,13 +1,10 @@
 <template>
-  <ul>
-    <li v-for="(path, name) in PATH">
-      <RouterLink :to="path" class="capitalize">{{ name.replaceAll('_',' ') }}</RouterLink>
+  <ul v-if="$M.sitemap">
+    <li v-for="(path, name) in $PATH" v-bind:key="name">
+      <RouterLink :to="path" class="capitalize">{{ name.replaceAll('_', ' ') }}</RouterLink>
     </li>
   </ul>
-  <router-view />
+  <div class="root-container">
+    <router-view />
+  </div>
 </template>
-
-<script setup lang="ts">
-import PATH from '@/constants/PATH'
-</script>
-
