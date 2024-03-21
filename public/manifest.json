@@ -1,12 +1,11 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "CRESPO",
-  "short_name": "CRESPO",
-  "description": "Internal database web app for Jubilee Chapel HQ, Corel Ministry Int'l Inc.",
+  "name": "Vudo",
+  "short_name": "Vudo",
+  "description": "Event Attendance Tracker for Jubilee Chapel HQ, Corel Ministry Int'l Inc.",
   "categories": [
-    "crespo",
-    "crespo db",
-    "crespo app",
+    "vduo",
+    "vduo app",
     "jubilee chapel",
     "corel ministry",
     "tony tobore",
@@ -83,19 +82,19 @@
   ],
   "screenshots": [
     {
-      "src": "/images/ui-splash.png",
+      "src": "/images/ui/splash.png",
       "type": "image/png",
       "sizes": "356x634",
       "label": "Welcome"
     },
     {
-      "src": "/images/ui-login.png",
+      "src": "/images/ui/login.png",
       "type": "image/png",
       "sizes": "356x634",
       "label": "Login"
     },
     {
-      "src": "/images/ui-dashboard.png",
+      "src": "/images/ui/dashboard.png",
       "type": "image/png",
       "sizes": "356x634",
       "label": "Home"
