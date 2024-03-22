@@ -31,6 +31,8 @@ export default Object.freeze({
   brand_tint: "#f2eaf0",
   brand_shade: "#180816",
   brand_rgb: [122, 41, 108],
+  brand_gold: "#d2af6d",
+  brand_blue: "#3a418f",
 
   // Gorgeous Green
   accent: "#297937 ",
@@ -41,6 +43,4 @@ export default Object.freeze({
   accent_rgb: [41, 121, 55],
 
   // Others
-  brand_gold: "#d2af6d",
-  brand_blue: "#3a418f",
 });

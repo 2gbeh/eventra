@@ -1,31 +1,50 @@
 <script setup>
 import { useRouter } from 'vue-router'
+import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
+import TablerSend from '~icons/tabler/send';
+import TablerLockShare from '~icons/tabler/lock-share';
+
 const router = useRouter()
-// router.push('/')
 </script>
 
 <template>
   <header class="">
-    <h1>Welcome back,</h1>
-    <h1>Log in</h1>
+    <h1>Welcome</h1>
+    <h1>back</h1>
   </header>
   <!--  -->
   <main class="h-screen">
     <form>
       <fieldset>
-        <div class="input-group">
+        <!--  -->
+        <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" placeholder="Ex. example@domain.com" required />
+          <div class="input-group">
+            <input type="email" id="email" placeholder="Ex. example@domain.com" required />
+            <i>
+              <TablerSend />
+            </i>
+          </div>
         </div>
-        <div class="input-group">
+        <!--  -->
+        <div class="form-group">
           <label for="password">Password</label>
-          <input type="password" id="password" placeholder="" required />
-        </div>
-        <div class="">
+          <div class="input-group">
+            <input type="password" id="password" placeholder="" required />
+            <i>
+              <TablerLockShare />
+            </i>
+          </div>
           <RouterLink class="" :to="$PATH.forgot_password">Forgot Password?</RouterLink>
         </div>
+        <!--  -->
         <div class="button-group">
-          <button @click="router.push($PATH.home)">Log in</button>
+          <button @click="router.push($PATH.home)" class="flex-center-center">
+            <span class="mr-1">
+              Log in
+            </span>
+            <LoadingAlt />
+          </button>
         </div>
       </fieldset>
     </form>

@@ -3,10 +3,9 @@ header {
   padding-bottom: 40px;
 
   h1 {
-    font-size: 24px;
+    font-size:32px;
     font-weight: 600;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: 1px;
+    line-height: 40px;
   }
 }
 
@@ -21,56 +20,80 @@ form {
 
   label {
     color: var(--brand);
+    font-size: 14px;
     font-weight: 600;
   }
 
-  .input-group {
-    margin: 20px 0 0;
+  input {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    width: 100%;
+    display: block;
 
-    input {
-      border-bottom: 1px solid #ddd;
-      padding: 5px 0;
-      width: 100%;
-      display: block;
-
-      &:focus {
-        border-color: var(--accent);
-      }
-    }
-
-  }
-
-  .button-group {
-    margin: 20px 0;
-
-    button {
-      background-color: var(--brand);
-      color: #fff;
-      border: 2px solid white;
-      border-radius: 40px;
-      margin-top: 20px;
-      padding: 12px 20px;
-      width: 100%;
-      text-align: center;
-      text-transform: uppercase;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 1px;
-
-      &.primary {
-        background-color: #fff;
-        color: var(--brand);
-      }
+    &:focus {
+      border-color: var(--accent);
     }
   }
 }
 
-footer {
-  margin-top: 20px;
-  text-align: center;
+.form-group {
+  margin: 20px 0 0;
 
   a {
-    color: var(--brand);
+    color: var(--brand_blue);
+    // color: var(--accent);
+    margin: 10px 0;
+    text-align: right;
+    font-size: 15px;
+    display: inline-block;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.input-group {
+  position: relative;
+
+  i {
+    color: #999;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}
+
+
+.button-group {
+  button {
+    background-color: var(--brand);
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 40px;
+    margin-top: 20px;
+    padding: 12px 20px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    &.primary {
+      background-color: #fff;
+      color: var(--brand);
+    }
+  }
+}
+
+
+footer {
+  text-align: center;
+  font-size: 15px;
+
+  a {
+    color: var(--brand_blue);
+    // color: var(--accent);
 
     &:hover {
       text-decoration: underline;
