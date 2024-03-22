@@ -1,7 +1,7 @@
-import { PropType } from "vue";
 import useGlobalProperties from "@/hooks/useGlobalProperties";
+import type { TProps } from "@/types/common";
 
-export default function useTheLogo(props: PropType) {
+export default function useTheLogo(props: TProps) {
   const _ = useGlobalProperties();
 
   const styles = {

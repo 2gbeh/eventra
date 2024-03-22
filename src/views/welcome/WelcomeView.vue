@@ -4,16 +4,15 @@
     <TheLogo size="100" has-border />
     <!--  -->
     <hgroup>
-      <!-- <h1 class="">assemb.ly{{ $APP.name }}</h1> -->
-      <h1 class="">assemb.ly</h1>
+      <h1 class="">{{ $APP.name }}</h1>
       <p class="">{{ $APP.summary }}</p>
     </hgroup>
   </main>
   <!--  -->
   <footer class="flex-center-center flex-col">
-    <button class="primary">Log in</button>
-    <button class="">Register</button>
+    <RouterLink class="primary" :to="$PATH.login">Log in</RouterLink>
+    <RouterLink class="" :to="$PATH.register">Register</RouterLink>
   </footer>
 </template>
 
-<style scoped src="@/app/welcome/Welcome.scss"></style>
+<style scoped src="./WelcomeView.scss"></style>

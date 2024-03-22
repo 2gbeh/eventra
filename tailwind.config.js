@@ -10,6 +10,7 @@ export default {
         brand: COLOR.brand,
         brand_gold: COLOR.brand_gold,
         brand_blue: COLOR.brand_blue,
+        accent: COLOR.accent,
       },
     },
   },

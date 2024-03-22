@@ -1,4 +1,4 @@
-import DashboardLayout from '@/app/dashboard/DashboardLayout.vue'
+import DashboardLayout from '@/components/_layouts/DashboardLayout.vue'
 
 export default [
   {
@@ -7,12 +7,12 @@ export default [
     children: [
       {
         path: '',
-        component: () => import('@/views/HomeView.vue'),
+        component: () => import('@/views/home/HomeView.vue'),
         meta: { title: 'Home' }
       },
       {
         path: 'profile',
-        component: () => import('@/views/ProfileView.vue'),
+        component: () => import('@/views/profile/ProfileView.vue'),
         meta: { title: 'Profile' }
       }
     ]
