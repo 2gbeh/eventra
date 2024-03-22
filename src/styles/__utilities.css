@@ -1,0 +1,15 @@
+@tailwind utilities;
+
+@layer utilities {
+  .root-container {
+    @apply w-full sm:w-[480px] mx-auto border-0
+  }
+
+  .bg-gradient {
+    @apply bg-gradient-to-r from-brand to-brand_dark
+  }
+
+  .bg-gradient-alt {
+    @apply bg-gradient-to-r from-fuchsia-600 to-brand
+  }
+}

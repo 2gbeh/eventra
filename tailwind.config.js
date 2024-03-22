@@ -8,8 +8,14 @@ export default {
     extend: {
       colors: {
         brand: COLOR.brand,
+        brand_light: COLOR.brand_light,
+        brand_dark: COLOR.brand_dark,
+        brand_tint: COLOR.brand_tint,
+        brand_shade: COLOR.brand_shade,
         brand_gold: COLOR.brand_gold,
         brand_blue: COLOR.brand_blue,
+        // 
+        accent: COLOR.accent,
       },
     },
   },

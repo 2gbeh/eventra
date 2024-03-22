@@ -1,0 +1,27 @@
+@tailwind base;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #fafafa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  label {
+    cursor: pointer;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    outline: none;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+  }
+}

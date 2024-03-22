@@ -1,4 +1,4 @@
-import AuthLayout from '@/app/auth/AuthLayout.vue'
+import AuthLayout from '@/components/_layouts/AuthLayout.vue'
 
 export default [
   {
@@ -7,22 +7,22 @@ export default [
     children: [
       {
         path: '',
-        component: () => import('@/views/WelcomeView.vue'),
+        component: () => import('@/views/welcome/WelcomeView.vue'),
         meta: { title: 'Event Attendance Tracker' }
       },
       {
         path: 'login',
-        component: () => import('@/views/LoginView.vue'),
+        component: () => import('@/views/login/LoginView.vue'),
         meta: { title: 'Log in' }
       },
       {
         path: 'register',
-        component: () => import('@/views/RegisterView.vue'),
+        component: () => import('@/views/register/RegisterView.vue'),
         meta: { title: 'Register' }
       },
       {
         path: 'forgot-passsword',
-        component: () => import('@/views/ForgotPasswordView.vue'),
+        component: () => import('@/views/forgot-password/ForgotPasswordView.vue'),
         meta: { title: 'Forgot Passsword' }
       }
     ]

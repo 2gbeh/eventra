@@ -16,18 +16,20 @@ hgroup {
 
 footer {
   /* background-color: red; */
+  padding: 0 40px;
   width: 100%;
   position: absolute;
   bottom: 40px;
 
-  button {
+  a {
     background-color: transparent;
     color: #fff;
     border: 2px solid white;
     border-radius: 40px;
     margin-top: 20px;
     padding: 12px 20px;
-    width: 80%;
+    width: 100%;
+    text-align: center;
     text-transform: uppercase;
     font-size: 13px;
     font-weight: bold;
@@ -35,7 +37,7 @@ footer {
 
     &.primary {
       background-color: #fff;
-      color: purple;
+      color: var(--brand);
     }
   }
 }
