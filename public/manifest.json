@@ -82,22 +82,22 @@
   ],
   "screenshots": [
     {
-      "src": "/images/ui/splash.png",
+      "src": "/images/ui/welcome.png",
       "type": "image/png",
-      "sizes": "356x634",
+      "sizes": "375x667",
       "label": "Welcome"
+    },
+    {
+      "src": "/images/ui/register.png",
+      "type": "image/png",
+      "sizes": "375x667",
+      "label": "Register"
     },
     {
       "src": "/images/ui/login.png",
       "type": "image/png",
-      "sizes": "356x634",
+      "sizes": "375x667",
       "label": "Login"
-    },
-    {
-      "src": "/images/ui/dashboard.png",
-      "type": "image/png",
-      "sizes": "356x634",
-      "label": "Home"
     }
   ]
 }
