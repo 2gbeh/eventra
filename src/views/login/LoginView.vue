@@ -39,10 +39,8 @@ const { handleSubmit, submitting } = useLoginView()
         </div>
         <!--  -->
         <Button :action="handleSubmit" class="flex-center-center mt-5">
-          <span :class="{ 'mr-1': submitting }">
-            Log in
-          </span>
-          <LoadingAlt v-if="submitting" />
+          Log in
+          <LoadingAlt v-if="submitting" :class="{ 'ml-1': submitting }" />
         </Button>
       </fieldset>
     </form>

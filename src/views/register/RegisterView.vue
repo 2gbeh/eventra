@@ -59,10 +59,8 @@ const { handleSubmit, submitting } = useRegisterView()
         </div>
         <!--  -->
         <Button :action="handleSubmit" class="flex-center-center mt-8">
-          <span :class="{ 'mr-1': submitting }">
-            Register
-          </span>
-          <LoadingAlt v-if="submitting" />
+          Register
+          <LoadingAlt v-if="submitting" :class="{ 'ml-1': submitting }" />
         </Button>
       </fieldset>
     </form>
