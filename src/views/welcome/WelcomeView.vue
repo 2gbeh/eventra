@@ -5,7 +5,7 @@ import Button from '@/components/button/Button.vue'
 <template>
   <main class="flex-center-center flex-col pt-20">
     <!--  -->
-    <TheLogo size="100" has-border />
+    <Logo size="100" has-border />
     <!--  -->
     <hgroup>
       <h1 class="">{{ $APP.name }}</h1>

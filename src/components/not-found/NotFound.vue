@@ -9,7 +9,7 @@ const {path, handleGoBack} = useNotFound();
 <template>
   <main class="flex-centered gap-2 bg-white">
     <!--  -->
-    <TheLogo size="100" />
+    <Logo size="100" />
     <h1>Not Found</h1>
     <p>It appears the requested resource <a>{{ path }}</a> does not exist or has been moved temporarily.</p>
     <!--  -->

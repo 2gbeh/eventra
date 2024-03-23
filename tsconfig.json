@@ -14,6 +14,10 @@
   "include": ["./src/**/*"],
   "compilerOptions": {
     "lib": ["ES2021.String", "es2015", "dom"],
+    "allowArbitraryExtensions": true,
+    "noUnusedParameters": false,
+    "allowJs": true,
+
     "module": "NodeNext",
     "baseUrl": "src",
     "paths": {

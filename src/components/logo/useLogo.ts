@@ -1,7 +1,7 @@
 import useGlobalProperties from "@/hooks/useGlobalProperties";
 import type { TProps } from "@/types/common";
 
-export default function useTheLogo(props: TProps) {
+export default function useLogo(props: TProps) {
   const _ = useGlobalProperties();
 
   const styles = {

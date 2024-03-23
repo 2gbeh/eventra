@@ -1,3 +1,11 @@
+<script setup lang="">
+import Fab from '@/components/Fab.vue'
+</script>
+
 <template>
-  <Tent h1="HomeView" />
+  <AppBar name="Sterling" />
+  <SafeAreaView offwhite>
+    hey
+  </SafeAreaView>
+  <Fab />
 </template>
