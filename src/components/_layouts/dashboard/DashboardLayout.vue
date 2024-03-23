@@ -1,6 +1,4 @@
 <template>
-  <main>
-    DashboardLayout
-    <router-view />
-  </main>
+  DashboardLayout
+  <router-view />
 </template>

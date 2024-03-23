@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="">
 import Button from '@/components/button/Button.vue'
 import AuthHeader from '@/components/AuthHeader.vue'
 import AuthFooter from '@/components/AuthFooter.vue'
