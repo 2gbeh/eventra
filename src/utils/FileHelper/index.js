@@ -5,7 +5,7 @@ import {
   audioFormats,
   videoFormats,
   docxFormats,
-} from "./constants";
+} from "./FILE_HELPER.js";
 
 export default class FileHelper {
   //

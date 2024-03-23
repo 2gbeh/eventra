@@ -9,14 +9,16 @@ const {path, handleGoBack} = useNotFound();
 <template>
   <main class="flex-centered gap-2 bg-white">
     <!--  -->
-    <Logo size="100" />
+    <Logo size="80" />
     <h1>Not Found</h1>
     <p>It appears the requested resource <a>{{ path }}</a> does not exist or has been moved temporarily.</p>
     <!--  -->
-    <Button :action="handleGoBack" class="flex-center-center mt-5">
-      <TablerChevronLeft class="mr-2 text-lg" />
-      Go Back
-    </Button>
+    <div class="w-[150px]">
+      <Button :action="handleGoBack" class="flex-center-center mt-5">
+        <TablerChevronLeft class="mr-2 text-lg" />
+        Go Back
+      </Button>
+    </div>
   </main>
 </template>
 

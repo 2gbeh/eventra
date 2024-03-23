@@ -6,7 +6,10 @@ const props = defineProps<{
 }>()
 
 const styles = {
-  backgroundColor: props.offwhite ? "#fafafa" : props.color || "#fff"
+  backgroundColor: props.offwhite ? "#fafafa" : props.color || "#fff",
+  paddingTop: "60px",
+  width: "100%",
+  height: "100vh",
 }
 </script>
 
@@ -15,11 +18,3 @@ const styles = {
     <slot />
   </main>
 </template>
-
-<style scoped lang="scss">
-main {
-  padding-top: 60px;
-  width: 100%;
-  height: 100vh;
-}
-</style>

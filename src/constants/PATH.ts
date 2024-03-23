@@ -9,10 +9,11 @@ export default Object.freeze({
   forgot_password: "/forgot-password",
   reset_password: "/reset-password",
   verify_email: "/verify-email",
-  // 
+  //
   home: "/dashboard",
   profile: "/dashboard/profile",
   settings: "/dashboard/settings",
   attendance: "/dashboard/attendance",
-  event: "/dashboard/event",
+  events: "/dashboard/events",
+  event: (id: string | number) => "/dashboard/events/" + id,
 });

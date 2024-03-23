@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import RiSearchLine from '~icons/ri/search-line';
 withDefaults(defineProps<{
-  avatar: string
-  greetings: string
-  name: string
+  avatar?: string
+  greetings?: string
+  name?: string
 }>(), {
   avatar: '/images/avatar.png',
   greetings: 'Hello,',
