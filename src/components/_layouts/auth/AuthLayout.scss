@@ -1,0 +1,53 @@
+main {
+  background-color: #fff;
+  color: #444;
+  border-radius: 30px 30px 0 0;
+}
+
+form {
+  padding: 30px;
+
+  label {
+    color: var(--brand);
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  input {
+    border-bottom: 1px solid #ddd;
+    padding: 5px 0;
+    width: 100%;
+    display: block;
+
+    &:focus {
+      border-color: var(--accent);
+    }
+  }
+}
+
+.form-group {
+  margin: 20px 0 0;
+
+  a {
+    color: var(--brand_blue);
+    // color: var(--accent);
+    margin: 10px 0;
+    text-align: right;
+    font-size: 15px;
+    font-weight: 500;
+    display: flex;
+    justify-content: end;
+  }
+}
+
+.input-group {
+  position: relative;
+
+  i {
+    color: #999;
+    font-size: 18px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+  }
+}

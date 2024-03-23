@@ -1,6 +1,10 @@
 @tailwind utilities;
 
 @layer utilities {
+  .flex-centered {
+    @apply h-screen flex flex-col items-center justify-center
+  }
+
   .flex-start {
     @apply flex justify-start
   }

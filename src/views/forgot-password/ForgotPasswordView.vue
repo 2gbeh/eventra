@@ -1,3 +1,3 @@
 <template>
-  <h1>ForgotPasswordView</h1>
+  <Tent h1="ForgotPasswordView" alt />
 </template>

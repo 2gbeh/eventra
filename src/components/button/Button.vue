@@ -1,20 +1,29 @@
 <script setup lang="ts">
-// import useTheLogo from "./useTheLogo"
+enum EVariant {
+  'solid' = 1,
+  'outline',
+  'solid_',
+  'outline_',
+}
 
 const props = withDefaults(defineProps<{
-  text: string
-  handleClick?: (() => void) | null
-  variant?: 'primary' | 'secondary'
+  variant?: keyof typeof EVariant
+  action?: (() => void) | string | null
   isLink?: boolean
 }>(), {
-  variant: 'primary'
+  variant: 'solid'
 })
 
-// const { styles } = useTheLogo(props)
+// console.log(props, EVariant)
 </script>
 
 <template>
-  <button :class="variant" @click="handleClick">{{ text }}</button>
+  <RouterLink v-if="isLink" :to="action" :class="variant">
+    <slot />
+  </RouterLink>
+  <button v-else type="button" @click="action" :class="variant">
+    <slot />
+  </button>
 </template>
 
 <style scoped src="./Button.scss"></style>

@@ -1,4 +1,4 @@
-import DashboardLayout from '@/components/_layouts/DashboardLayout.vue'
+import DashboardLayout from '@/components/_layouts/dashboard/DashboardLayout.vue'
 
 export default [
   {

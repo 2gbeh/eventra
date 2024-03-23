@@ -1,3 +1,3 @@
 <template>
-  <h1>ProfileView</h1>
+  <Tent h1="ProfileView"  />
 </template>

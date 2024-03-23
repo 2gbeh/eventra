@@ -1,4 +1,4 @@
-import AuthLayout from '@/components/_layouts/AuthLayout.vue'
+import AuthLayout from '@/components/_layouts/auth/AuthLayout.vue'
 
 export default [
   {
@@ -21,7 +21,7 @@ export default [
         meta: { title: 'Register' }
       },
       {
-        path: 'forgot-passsword',
+        path: 'forgot-password',
         component: () => import('@/views/forgot-password/ForgotPasswordView.vue'),
         meta: { title: 'Forgot Passsword' }
       }
