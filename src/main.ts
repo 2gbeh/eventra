@@ -6,13 +6,15 @@ import twMergeDirective from "tailwind-merge-vue-directive";
 //
 import App from "./App.vue";
 import router from "./routes/router";
-import TheLogo from "./components/the-logo/TheLogo.vue";
+import Logo from "./components/logo/Logo.vue";
+import AppBar from "./components/app-bar/AppBar.vue";
+import SafeAreaView from "./components/SafeAreaView.vue";
 import Tent from "./components/Tent.vue";
 import APP from "./constants/APP";
 import PATH from "./constants/PATH";
 import COLOR from "./constants/COLOR";
 import M from "./constants/MOCK";
-import './types/globalProperties.type'
+import "./types/globalProperties.type";
 
 // APP INSTANCE
 const app = createApp(App);
@@ -24,8 +26,10 @@ app.config.globalProperties.$COLOR = COLOR;
 app.config.globalProperties.$M = M;
 
 // COMPONENTS
-app.component("TheLogo", TheLogo);
 app.component("Tent", Tent);
+app.component("Logo", Logo);
+app.component("AppBar", AppBar);
+app.component("SafeAreaView", SafeAreaView);
 
 // MIDDLEWARE
 app.use(createPinia());

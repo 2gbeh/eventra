@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useTheLogo from "./useTheLogo"
+import useTheLogo from "./useLogo"
 
 const props = withDefaults(defineProps<{
   size?: number | string
@@ -25,4 +25,4 @@ const { styles } = useTheLogo(props)
   </figure>
 </template>
 
-<style scoped src="./TheLogo.scss"></style>
+<style scoped src="./Logo.scss"></style>
