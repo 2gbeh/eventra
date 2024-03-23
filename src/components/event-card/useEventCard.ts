@@ -5,8 +5,8 @@ export default function useEventCard(props: TProps) {
   const data = props?.event ? EventService.eventPipe(props.event) : [];
 
   const styles = {
-    // backgroundImage: EventService.bgImg(),
-    backgroundImage: `url(${data.thumbnail})`,
+    backgroundImage: EventService.bgImg(),
+    // backgroundImage: `url(${data.thumbnail})`,
   };
   //
   return { data, styles };

@@ -15,7 +15,7 @@
 
   .backdrop {
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: center;
     background-attachment: scroll;
     background-size: cover;
   }
