@@ -1,3 +1,3 @@
 <template>
-  <h1>HomeView</h1>
+  <Tent h1="HomeView" />
 </template>

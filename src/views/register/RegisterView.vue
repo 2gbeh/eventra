@@ -1,22 +1,22 @@
 <script setup>
-import { useRouter } from 'vue-router'
+import Button from '@/components/button/Button.vue'
+import AuthHeader from '@/components/AuthHeader.vue'
+import AuthFooter from '@/components/AuthFooter.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
 import TablerSend from '~icons/tabler/send';
 import TablerUserCircle from '~icons/tabler/user-circle';
 import TablerLockShare from '~icons/tabler/lock-share';
-
-const router = useRouter()
+// 
+import useRegisterView from './useRegisterView'
+const { handleSubmit, submitting } = useRegisterView()
 </script>
 
 <template>
-  <header class="">
-    <h1>Create an</h1>
-    <h1>account</h1>
-  </header>
+  <AuthHeader h1="Create an" p="account" />
   <!--  -->
   <main class="h-screen">
     <form>
-      <fieldset>
+      <fieldset :disabled="submitting">
         <!--  -->
         <div class="form-group">
           <label for="name">Name</label>
@@ -58,22 +58,17 @@ const router = useRouter()
           </div>
         </div>
         <!--  -->
-        <div class="button-group mt-8">
-          <button @click="router.push($PATH.verify_email)" class="flex-center-center">
-            <span class="mr-1">
-              Register
-            </span>
-            <LoadingAlt />
-          </button>
-        </div>
+        <Button :action="handleSubmit" class="flex-center-center mt-8">
+          <span :class="{ 'mr-1': submitting }">
+            Register
+          </span>
+          <LoadingAlt v-if="submitting" />
+        </Button>
       </fieldset>
     </form>
     <!--  -->
-    <footer class="">
-      Already have an account?
-      <RouterLink class="" :to="$PATH.login">Log in</RouterLink>
-    </footer>
+    <AuthFooter prompt="Already have an account?" text="Log in" :to="$PATH.login" />
   </main>
 </template>
 
-<style scoped src="../login/LoginView.scss"></style>
+<style scoped src="@/components/_layouts/auth/AuthLayout.scss"></style>

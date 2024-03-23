@@ -7,6 +7,7 @@ import twMergeDirective from "tailwind-merge-vue-directive";
 import App from "./App.vue";
 import router from "./routes/router";
 import TheLogo from "./components/the-logo/TheLogo.vue";
+import Tent from "./components/Tent.vue";
 import APP from "./constants/APP";
 import PATH from "./constants/PATH";
 import COLOR from "./constants/COLOR";
@@ -24,6 +25,7 @@ app.config.globalProperties.$M = M;
 
 // COMPONENTS
 app.component("TheLogo", TheLogo);
+app.component("Tent", Tent);
 
 // MIDDLEWARE
 app.use(createPinia());
