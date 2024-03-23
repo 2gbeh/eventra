@@ -24,4 +24,8 @@
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
   }
+
+  mark {
+    @apply bg-brand_tint text-brand px-1
+  }
 }

@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-</script>
 <template>
 	<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
 		<circle cx="4" cy="12" r="0" fill="currentColor">
