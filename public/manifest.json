@@ -42,59 +42,21 @@
       "sizes": "683x683"
     }
   ],
-  "shortcuts": [
-    {
-      "name": "Data Capture",
-      "short_name": "Capture",
-      "description": "Capture bio-data or finances",
-      "url": "/dashboard/capture",
-      "icons": [
-        {
-          "src": "/images/ico-capture.png",
-          "sizes": "512x512"
-        }
-      ]
-    },
-    {
-      "name": "Church Members",
-      "short_name": "Members",
-      "description": "View church members",
-      "url": "/dashboard/members",
-      "icons": [
-        {
-          "src": "/images/ico-members.png",
-          "sizes": "512x512"
-        }
-      ]
-    },
-    {
-      "name": "Church Finances",
-      "short_name": "Finances",
-      "description": "View church finances",
-      "url": "/dashboard/finances",
-      "icons": [
-        {
-          "src": "/images/ico-finances.png",
-          "sizes": "512x512"
-        }
-      ]
-    }
-  ],
   "screenshots": [
     {
-      "src": "/images/ui/welcome.png",
+      "src": "/ui/welcome.png",
       "type": "image/png",
-      "sizes": "375x667",
+      "sizes": "480x749",
       "label": "Welcome"
     },
     {
-      "src": "/images/ui/register.png",
+      "src": "/ui/register.png",
       "type": "image/png",
       "sizes": "375x667",
       "label": "Register"
     },
     {
-      "src": "/images/ui/login.png",
+      "src": "/ui/login.png",
       "type": "image/png",
       "sizes": "375x667",
       "label": "Login"
