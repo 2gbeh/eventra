@@ -1,5 +1,7 @@
 <script setup lang="">
 import Button from '@/components/button/Button.vue'
+import fakerHelper from "@/lib/faker-js/main";
+// fakerHelper.log(fakerHelper.getArticles);
 </script>
 
 <template>
@@ -13,7 +15,7 @@ import Button from '@/components/button/Button.vue'
     </hgroup>
   </main>
   <!--  -->
-  <footer class="flex-center-center flex-col gap-6">
+  <footer class="root-wrapper flex-center-center flex-col gap-6">
     <Button variant="solid_" :action="$PATH.login" isLink>
       Log in
     </button>

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Vudo",
-  "short_name": "Vudo",
+  "name": "Eventra",
+  "short_name": "Eventra",
   "description": "Event Attendance Tracker for Jubilee Chapel HQ, Corel Ministry Int'l Inc.",
   "categories": [
     "vduo",

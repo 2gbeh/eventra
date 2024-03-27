@@ -12,7 +12,7 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <header class="flex-center-between">
+  <header class="root-wrapper flex-center-between">
     <figure class="flex-center">
       <img :src="avatar" alt="Avatar" />
       <figcaption>
