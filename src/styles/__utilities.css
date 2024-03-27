@@ -5,6 +5,10 @@
     @apply w-full sm:w-[480px] mx-auto border-0
   }
 
+  .root-wrapper {
+    @apply w-full sm:w-[480px]
+  }
+
   .bg-gradient {
     @apply bg-gradient-to-r from-brand to-brand_dark
   }

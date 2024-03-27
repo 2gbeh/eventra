@@ -5,14 +5,15 @@ import personSchema from "./schema/personSchema";
 import postSchema from "./schema/postSchema";
 import notificationSchema from "./schema/notificationSchema";
 import eventSchema from "./schema/eventSchema.js";
+import articleSchema from "./schema/articleSchema.js";
 
 export default class Seeders extends FakerPost {
   log = (args) => console.log(JSON.stringify(args));
 
-  seed = (schema, size) =>
+  seed = (schema, size, strict = false) =>
     size > 1
-      ? this.factory({ ...schema, id: "id" }, size)
-      : this.factory({ ...schema, id: "id" }, 1).pop();
+      ? this.factory(strict ? schema : { ...schema, id: "id" }, size)
+      : this.factory(strict ? schema : { ...schema, id: "id" }, 1).pop();
 
   factory(schema, size = 10, asObject = false) {
     let [arr, obj] = [[], {}];
@@ -71,5 +72,11 @@ export default class Seeders extends FakerPost {
   }
   get getEvents() {
     return this.seed(eventSchema, 10);
+  }
+  get getArticle() {
+    return this.seed(eventSchema, 1, true);
+  }
+  get getArticles() {
+    return this.seed(articleSchema, 25, true);
   }
 }
