@@ -11,14 +11,20 @@ const props = defineProps<{
 }>()
 
 const { data, styles } = useEventCard(props)
+const stylesTimeBorder = {
+  borderBottom: '2px solid',
+  borderColor: props.index < 1 ? '#16BC00' : '#D81B60'
+};
 </script>
 
 <template>
   <div class="container flex-between">
+    <!--  -->
     <time class="" title="Sep 15, 1992">
       <p>{{ data.f_date_day }}</p>
-      <b>{{ data.f_date_month }}</b>
+      <b :style="stylesTimeBorder">{{ data.f_date_month }}</b>
     </time>
+    <!--  -->
     <article class="backdrop" :style="styles">
       <section>
         <h1 class="truncate">{{ data.title }}</h1>

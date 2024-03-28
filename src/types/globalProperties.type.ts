@@ -1,6 +1,12 @@
-type THashMap  = Record<string, string | number | number[]>
+type THashMapValue =
+  | string
+  | number
+  | number[]
+  | ((id: string | number) => string);
 
-declare module '@vue/runtime-core' {
+type THashMap = Record<string, THashMapValue>;
+
+declare module "@vue/runtime-core" {
   interface ComponentCustomProperties {
     $APP: THashMap;
     $PATH: THashMap;
@@ -9,4 +15,4 @@ declare module '@vue/runtime-core' {
   }
 }
 
-export {}  // Important! See note.
+export {}; // Important! See note.

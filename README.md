@@ -2,8 +2,11 @@
 
 Event Attendance Tracker - Corel Ministry Int'l
 
-[![VueJS](https://img.shields.io/badge/Vue-3.x-41b883.svg)](https://vuejs.org/guide/introduction.html)
+[![Vue](https://img.shields.io/badge/Vue-3.x-41b883.svg)](https://vuejs.org/guide/introduction.html)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/docs/)
+[![Firebase](https://img.shields.io/badge/Firebase-10.x-ffcb2c.svg)](hhttps://console.firebase.google.com/)
+
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Installation
 
@@ -21,7 +24,7 @@ $ npm run dev
 
 ## Usage
 
-Open http://localhost:5173/
+> Local:   http://localhost:5173/
 
 ## Documentation
 

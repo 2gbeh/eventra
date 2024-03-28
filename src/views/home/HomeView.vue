@@ -1,14 +1,15 @@
 <script setup lang="">
 import Fab from '@/components/Fab.vue'
 import EventCard from '@/components/event-card/EventCard.vue'
-import events from '@/data/mock-events'
+import AddEventOffcanvas from '@/components/add-event-offcanvas/AddEventOffcanvas.vue'
+import events from '@/data/fake-events'
 
 // import fakerHelper from "@/lib/faker-js/main";
 // fakerHelper.log(fakerHelper.getEvents);
 </script>
 
 <template>
-  <AppBar name="Sterling" />
+  <AppBar name="Gideon" />
   <!--  -->
   <Fab />
   <!--  -->
@@ -21,8 +22,10 @@ import events from '@/data/mock-events'
     <!--  -->
     <div class="px-5">
       <!-- <EventCard v-for="n in 6" :key="n" :index="n" /> -->
-      <EventCard v-for="e of events" :key="e.id" :event="e" />
+      <EventCard v-for="(e, i) of events" :key="e.id" :index="i" :event="e" />
     </div>
+    <!--  -->
+    <!-- <AddEventOffcanvas /> -->
   </SafeAreaView>
 </template>
 
