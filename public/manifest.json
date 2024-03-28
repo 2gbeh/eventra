@@ -60,6 +60,18 @@
       "type": "image/png",
       "sizes": "375x667",
       "label": "Login"
+    },
+    {
+      "src": "/ui/home.png",
+      "type": "image/png",
+      "sizes": "375x667",
+      "label": "Home"
+    },
+    {
+      "src": "/ui/add-event.png",
+      "type": "image/png",
+      "sizes": "375x667",
+      "label": "Add Event"
     }
   ]
 }
