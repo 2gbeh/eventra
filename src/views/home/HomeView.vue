@@ -25,7 +25,7 @@ import events from '@/data/fake-events'
       <EventCard v-for="(e, i) of events" :key="e.id" :index="i" :event="e" />
     </div>
     <!--  -->
-    <!-- <AddEventOffcanvas /> -->
+    <AddEventOffcanvas />
   </SafeAreaView>
 </template>
 
