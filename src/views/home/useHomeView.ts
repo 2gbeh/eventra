@@ -9,8 +9,13 @@ import { zzz } from "@/utils";
 export default function useHomeView() {
   const router = useRouter();
   const _ = useGlobalProperties();
+  const showSearch = ref(true);
   const showOffcanvas = ref(false);
   const submitting = ref(false);
+
+  async function toggleSearch() {
+    showSearch.value = !showSearch.value;
+  }
 
   async function toggleOffcanvas() {
     showOffcanvas.value = !showOffcanvas.value;
@@ -23,5 +28,5 @@ export default function useHomeView() {
     toggleOffcanvas()
   }
 
-  return { showOffcanvas, toggleOffcanvas, handleSubmit, submitting };
+  return { showSearch, toggleSearch, showOffcanvas, toggleOffcanvas, handleSubmit, submitting };
 }

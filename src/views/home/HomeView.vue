@@ -1,20 +1,23 @@
 <script setup lang="">
 import Fab from '@/components/Fab.vue'
 import BottomSheet from '@/components/BottomSheet.vue'
+import SearchInput from '@/components/search-input/SearchInput.vue'
 import EventCard from '@/components/event-card/EventCard.vue'
 import AddEvent from '@/components/add-event/AddEvent.vue'
 import events from '@/data/fake-events'
 // 
 import useHomeView from './useHomeView'
-const { showOffcanvas, toggleOffcanvas, handleSubmit, submitting } = useHomeView();
+const { showSearch, toggleSearch, showOffcanvas, toggleOffcanvas, handleSubmit, submitting } = useHomeView();
 </script>
 
 <template>
-  <AppBar name="Fatima" />
+  <AppBar name="Fatima" :toggle-search="toggleSearch" />
   <!--  -->
   <Fab :handle-click="toggleOffcanvas" />
   <!--  -->
   <SafeAreaView offwhite>
+    <!--  -->
+    <SearchInput v-if="showSearch" />
     <!--  -->
     <section class="flex-center-between">
       <h1>Recent Events</h1>

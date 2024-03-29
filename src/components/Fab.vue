@@ -5,8 +5,9 @@ defineProps<{
 }>()
 </script>
 
+
 <template>
   <button type="button" @click="handleClick" class="fab">
-    <TablerPlus />
+    <TablerPlus style="font-size: 20px;" />
   </button>
 </template>

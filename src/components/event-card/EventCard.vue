@@ -13,7 +13,7 @@ const props = defineProps<{
 const { data, styles } = useEventCard(props)
 const stylesTimeBorder = {
   borderBottom: '2px solid',
-  borderColor: props.index < 1 ? '#16BC00' : '#D81B60'
+  borderColor: props.index < 1 ? '#16BC00' : '#D81B60',
 };
 </script>
 
@@ -25,8 +25,8 @@ const stylesTimeBorder = {
       <b :style="stylesTimeBorder">{{ data.f_date_month }}</b>
     </time>
     <!--  -->
-    <article class="backdrop" :style="styles">
-      <section>
+    <section class="backdrop" :style="styles">
+      <article>
         <h1 class="truncate">{{ data.title }}</h1>
         <ol class="flex-center gap-3">
           <li class="flex-center">
@@ -46,9 +46,9 @@ const stylesTimeBorder = {
             <b title="Female: 377">{{ data.f_attendance_female }}%</b>
           </li>
         </ol>
-      </section>
-    </article>
+      </article>
+    </section>
   </div>
 </template>
 
-<style scoped src="./EventCard.scss"></style>import { getRandomValues } from 'crypto';
+<style scoped src="./EventCard.scss"></style>

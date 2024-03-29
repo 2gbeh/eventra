@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import RiSearchLine from '~icons/ri/search-line';
 withDefaults(defineProps<{
-  avatar?: string
-  greetings?: string
-  name?: string
+  avatar?: string,
+  greetings?: string,
+  name?: string,
+  toggleSearch?: () => void,
 }>(), {
   avatar: '/images/avatar.png',
   greetings: 'Hello,',
@@ -11,6 +12,7 @@ withDefaults(defineProps<{
 })
 </script>
 
+<!-- Onament: Floating Bottom Navbsr -->
 <template>
   <header class="root-wrapper flex-center-between">
     <figure class="flex-center">
@@ -21,7 +23,7 @@ withDefaults(defineProps<{
       </figcaption>
     </figure>
     <i>
-      <RiSearchLine />
+      <RiSearchLine @click="toggleSearch" title="Search" />
     </i>
   </header>
 </template>

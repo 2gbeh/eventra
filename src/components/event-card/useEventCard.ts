@@ -7,6 +7,7 @@ export default function useEventCard(props: TProps) {
   const styles = {
     backgroundImage: EventService.bgImg(),
     // backgroundImage: `url(${data.thumbnail})`,
+    maxWidth: 100,
   };
   //
   return { data, styles };
