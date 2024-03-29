@@ -16,10 +16,10 @@ import fakerHelper from "@/lib/faker-js/main";
   </main>
   <!--  -->
   <footer class="root-wrapper flex-center-center flex-col gap-6">
-    <Button variant="solid_" :action="$PATH.login" isLink>
+    <Button variant="solid_" :action="$PATH.login" is-link>
       Log in
     </button>
-    <Button variant="outline_" :action="$PATH.register" isLink>
+    <Button variant="outline_" :action="$PATH.register" is-link>
       Register
     </Button>
   </footer>
