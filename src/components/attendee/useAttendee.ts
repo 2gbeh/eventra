@@ -4,10 +4,10 @@ import useGlobalProperties from "@/hooks/useGlobalProperties";
 import type { TProps } from "@/types/common";
 import EventService from "@/services/Event.service";
 
-export default function useEventCard(props: TProps) {
+export default function useAttendee(props: TProps) {
   const router = useRouter();
   const _ = useGlobalProperties();
-  // 
+  //
   const data = props?.item ? EventService.eventPipe(props.item) : [];
   const styles = {
     card: {

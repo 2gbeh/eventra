@@ -9,6 +9,7 @@ import router from "./routes/router";
 import Logo from "./components/logo/Logo.vue";
 import AppBar from "./components/app-bar/AppBar.vue";
 import SafeAreaView from "./components/SafeAreaView.vue";
+import ScrollView from "./components/ScrollView.vue";
 import Tent from "./components/Tent.vue";
 import APP from "./constants/APP";
 import PATH from "./constants/PATH";
@@ -30,6 +31,7 @@ app.component("Tent", Tent);
 app.component("Logo", Logo);
 app.component("AppBar", AppBar);
 app.component("SafeAreaView", SafeAreaView);
+app.component("ScrollView", ScrollView);
 
 // MIDDLEWARE
 app.use(createPinia());

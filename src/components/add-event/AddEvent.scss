@@ -13,7 +13,8 @@ form {
     }
   }
 
-  input {
+  input, select, textarea {
+    background-color: #fff;
     border-bottom: 1px solid #ddd;
     padding: 0 5px 5px;
     width: 100%;

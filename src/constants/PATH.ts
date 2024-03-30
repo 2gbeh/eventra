@@ -15,5 +15,5 @@ export default Object.freeze({
   settings: "/dashboard/settings",
   attendance: "/dashboard/attendance",
   events: "/dashboard/events",
-  event: (id: string | number) => "/dashboard/events/" + id,
+  event: "/dashboard/events/",
 });
