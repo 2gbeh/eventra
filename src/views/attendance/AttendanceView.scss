@@ -1,0 +1,19 @@
+.tabs {
+  button {
+    // background: var(--brand_tint);
+    color: #444;
+    border-bottom: 2px solid transparent;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 500;
+
+    &:hover {
+      background: var(--brand_tint);
+    }
+  }
+
+  button#active {
+    color: var(--brand);
+    border-color: var(--brand);
+  }
+}

@@ -4,17 +4,14 @@ import PhUsers from '~icons/ph/users';
 import IonMale from '~icons/ion/male-outline';
 import IonFemale from '~icons/ion/female-outline';
 import useEventCard from './useEventCard'
+import { wrap, live } from '@/utils'
 
 const props = defineProps<{
   index?: number
-  event?: Record<string, unknown>
+  item?: Record<string, unknown>
 }>()
 
-const { data, styles } = useEventCard(props)
-const stylesTimeBorder = {
-  borderBottom: '2px solid',
-  borderColor: props.index < 1 ? '#16BC00' : '#D81B60',
-};
+const { styles, data, handleViewAttendance } = useEventCard(props)
 </script>
 
 <template>
@@ -22,17 +19,17 @@ const stylesTimeBorder = {
     <!--  -->
     <time class="" title="Sep 15, 1992">
       <p>{{ data.f_date_day }}</p>
-      <b :style="stylesTimeBorder">{{ data.f_date_month }}</b>
+      <b :style="styles.time.border">{{ data.f_date_month }}</b>
     </time>
     <!--  -->
-    <section class="backdrop" :style="styles">
-      <article>
-        <h1 class="truncate">{{ data.title }}</h1>
+    <section class="backdrop" :style="styles.card">
+      <article @click="handleViewAttendance">
+        <h1 class="truncate">{{ wrap(data.title, 24) }}</h1>
         <ol class="flex-center gap-3">
-          <li class="flex-center">
+          <!-- <li class="flex-center">
             <PhUser />
             <b title="Author: Gideon Olueh">{{ data.f_user_name }}</b>
-          </li>
+          </li> -->
           <li class="flex-center">
             <PhUsers />
             <b title="Total: 1,509">{{ data.f_attendance_total }}</b>

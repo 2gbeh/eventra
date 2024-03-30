@@ -11,8 +11,11 @@
 
 :root {
   --brand: #7a296c;
-  --accent: #297937;
   --brand_gold: #d2af6d;
   --brand_blue: #3a418f;
+  --brand_tint: #f2eaf0;
+  
+  --accent: #297937;
+
   --bg_gradient: linear-gradient(to right, #7a296c, #6e2561);
 }
