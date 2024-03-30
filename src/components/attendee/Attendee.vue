@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import '@carbon/web-components/es/components/toggle/index.js';
 import EpArrowRightBold from '~icons/ep/arrow-right-bold';
 import { wrap, live } from '@/utils'
 // 
@@ -22,7 +23,8 @@ const props = defineProps<{
       </figcaption>
     </figure>
     <i>
-      <EpArrowRightBold />
+      <!-- <EpArrowRightBold /> -->
+      <cds-toggle size="sm" label-a="On" label-text="Toggle" label-b="Off"></cds-toggle>
     </i>
   </div>
 </template>

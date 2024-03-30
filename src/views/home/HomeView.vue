@@ -26,10 +26,10 @@ const { showOffcanvas, toggleOffcanvas, handleSubmit, submitting } = useHomeView
       <RouterLink :to="$PATH.events">View all</RouterLink>
     </section>
     <!--  -->
-    <ScrollView>
+    <SafeScrollView>
       <!-- <EventCard v-for="n in 6" :key="n" :index="n" /> -->
       <EventCard v-for="(e, i) of events" :key="e.id" :index="i" :item="e" />
-    </ScrollView>
+    </SafeScrollView>
     <!--  -->
     <BottomSheet v-if="showOffcanvas" :on-close="toggleOffcanvas">
       <AddEvent :handle-submit="handleSubmit" :submitting="submitting" />

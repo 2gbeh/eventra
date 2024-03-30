@@ -2,7 +2,7 @@
 import Fab from '@/components/Fab.vue'
 import Attendee from '@/components/attendee/Attendee.vue'
 import SearchInput from '@/components/search-input/SearchInput.vue'
-import users from '@/data/fake-users'
+import users from '@/data/fake-users.jjs'
 // 
 import useSearchInput from '@/components/search-input/useSearchInput'
 const { showSearch, toggleSearch } = useSearchInput();
@@ -20,9 +20,9 @@ const { showSearch, toggleSearch } = useSearchInput();
       <button class="flex-1">Unattended</button>
     </section>
     <!--  -->
-    <ScrollView>
+    <SafeScrollView>
       <Attendee v-for="(e, i) of users" :key="e.id" :index="i" :item="e" />
-    </ScrollView>
+    </SafeScrollView>
   </SafeAreaView>
 </template>
 
