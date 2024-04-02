@@ -4,8 +4,7 @@ import userSchema from "./schema/userSchema";
 import personSchema from "./schema/personSchema";
 import postSchema from "./schema/postSchema";
 import notificationSchema from "./schema/notificationSchema";
-import eventSchema from "./schema/eventSchema.js";
-import articleSchema from "./schema/articleSchema.js";
+import customSchema from "./schema/customSchema.js";
 
 export default class Seeders extends FakerPost {
   log = (args) => console.log(JSON.stringify(args));
@@ -67,16 +66,10 @@ export default class Seeders extends FakerPost {
   get getNotifications() {
     return this.seed(notificationSchema, 5);
   }
-  get getEvent() {
-    return this.seed(eventSchema, 1);
+  get getDocument() {
+    return this.seed(customSchema, 1);
   }
-  get getEvents() {
-    return this.seed(eventSchema, 10);
-  }
-  get getArticle() {
-    return this.seed(eventSchema, 1, true);
-  }
-  get getArticles() {
-    return this.seed(articleSchema, 25, true);
+  get getCollection() {
+    return this.seed(customSchema, 25);
   }
 }

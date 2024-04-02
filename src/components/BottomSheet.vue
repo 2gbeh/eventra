@@ -1,7 +1,7 @@
-<script setup lang="ts">
-defineProps<{
-  onClose: () => void,
-}>()
+<script setup lang="">
+defineProps({
+  onClose: Function,
+})
 </script>
 
 <template>

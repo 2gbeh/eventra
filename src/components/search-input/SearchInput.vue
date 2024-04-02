@@ -1,3 +1,7 @@
+<script lang="">
+export { default as useSearchInput } from './useSearchInput';
+</script>
+
 <script setup lang="">
 import SearchIcon from '~icons/iconamoon/search-bold';
 import FilterIcon from '~icons/codicon/settings'

@@ -1,12 +1,12 @@
-<script setup lang="ts">
+<script setup lang="">
 import AddEventImage from '@/components/add-event-image/AddEventImage.vue'
 import Button from '@/components/button/Button.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
 // 
-defineProps<{
-  handleSubmit: () => void,
-  submitting: boolean,
-}>()
+defineProps({
+  handleSubmit: Function,
+  submitting: Boolean,
+})
 </script>
 
 <template>

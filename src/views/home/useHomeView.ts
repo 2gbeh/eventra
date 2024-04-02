@@ -1,10 +1,12 @@
-import { ref } from "vue";
+import { ref, reactive } from "vue";
 import { zzz } from "@/utils";
+import events from "@/data/fake-events";
 
 // import fakerHelper from "@/lib/faker-js/main";
-// fakerHelper.log(fakerHelper.getEvents);
+// fakerHelper.log(fakerHelper.getCollection);
 
 export default function useHomeView() {
+  const data = reactive(events);
   const showOffcanvas = ref(false);
   const submitting = ref(false);
 
@@ -16,8 +18,8 @@ export default function useHomeView() {
     submitting.value = true;
     await zzz();
     submitting.value = false;
-    toggleOffcanvas()
+    toggleOffcanvas();
   }
 
-  return { showOffcanvas, toggleOffcanvas, handleSubmit, submitting };
+  return { data, showOffcanvas, toggleOffcanvas, handleSubmit, submitting };
 }

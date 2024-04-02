@@ -1,9 +1,9 @@
-<script setup lang="ts">
-const props = defineProps<{
-  color?: string;
-  centered?: boolean;
-  offwhite?: boolean;
-}>()
+<script setup lang="">
+const props = defineProps({
+  color: String,
+  centered: Boolean,
+  offwhite: Boolean,
+})
 
 const styles = {
   backgroundColor: props.offwhite ? "#fafafa" : props.color || "#fff",

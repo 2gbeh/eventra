@@ -1,17 +1,22 @@
-<script setup lang="ts">
+<script setup lang="">
 import PhUser from '~icons/ph/user';
 import PhUsers from '~icons/ph/users';
 import IonMale from '~icons/ion/male-outline';
 import IonFemale from '~icons/ion/female-outline';
-import useEventCard from './useEventCard'
+import useNavigator from "@/hooks/useNavigator";
 import { wrap, live } from '@/utils'
+// 
+import EventService from "@/services/Event.service";
 
-const props = defineProps<{
-  index?: number
-  item?: Record<string, unknown>
-}>()
+const props = defineProps({
+  index: Number,
+  item: Object
+})
 
-const { styles, data, handleViewAttendance } = useEventCard(props)
+const nav = useNavigator()
+const viewEventAttendance = () => nav("attendance", { eventId: 1 })
+const data = EventService.eventPipe(props.item);
+const styles = EventService.styles(props.item);
 </script>
 
 <template>
@@ -23,7 +28,7 @@ const { styles, data, handleViewAttendance } = useEventCard(props)
     </time>
     <!--  -->
     <section class="backdrop" :style="styles.card">
-      <article @click="handleViewAttendance">
+      <article @click="viewEventAttendance">
         <h1 class="truncate">{{ wrap(data.title, 24) }}</h1>
         <ol class="flex-center gap-3">
           <!-- <li class="flex-center">

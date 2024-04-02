@@ -2,18 +2,24 @@
   button {
     // background: var(--brand_tint);
     color: #444;
-    border-bottom: 2px solid transparent;
+    border-bottom: 2px solid #eee;
     padding: 10px;
     font-size: 15px;
     font-weight: 500;
 
     &:hover {
-      background: var(--brand_tint);
+      // background: var(--brand_tint);
+    }
+
+    &.active {
+      color: var(--brand);
+      border-color: var(--brand);
+    }
+
+    var {
+      background-color: #e11;
+      color: #fff;
     }
   }
 
-  button#active {
-    color: var(--brand);
-    border-color: var(--brand);
-  }
 }
