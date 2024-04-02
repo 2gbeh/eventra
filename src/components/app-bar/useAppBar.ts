@@ -1,7 +1,7 @@
 import { useRouter } from "vue-router";
 import useGlobalProperties from "@/hooks/useGlobalProperties";
 //
-import type { TProps } from "@/types/common";
+import type { TProps } from "@/types/common.type";
 
 export default function useAppBar(props: TProps) {
   const router = useRouter();

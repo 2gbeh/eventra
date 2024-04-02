@@ -1,6 +1,7 @@
 <script setup lang="">
 import ToggleInput from '@/components/ToggleInput.vue'
-import { wrap, live } from '@/utils'
+import ImageHelper from '@/utils/helpers/ImageHelper'
+import { wrap } from '@/utils'
 // 
 const props = defineProps({
   index: Number,
@@ -8,13 +9,14 @@ const props = defineProps({
   alt: { type: Boolean, default: false },
   toggleStatus: Function,
 })
+
 </script>
 
 <template>
   <div class="flex-center-between container">
     <!--  -->
     <figure class="flex-center">
-      <img :src="live && item?.avatar ? item.avatar : '/images/avatar.png'" alt="" />
+      <img :src="ImageHelper.src(item.avatar, '/images/avatar.png')" alt="" />
       <figcaption>
         <h1>{{ item.name }}</h1>
         <p>{{ wrap(item.email, 24) }}</p>

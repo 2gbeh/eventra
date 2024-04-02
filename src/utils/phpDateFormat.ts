@@ -1,4 +1,12 @@
-"use strict";
+/* # USAGE 
+import date from '@/utils/phpDateFormat'
+date('now')
+date('now', '*')
+date('now', 'M j')
+date('1992-09-15', 'M j')
+date('1992-09-15 12:00:00', 'M j')
+date('1992-09-15T12:00:00.000Z', 'M j')
+*/
 
 type TObj = Record<string, unknown>;
 type TRes = string | TObj;
@@ -17,12 +25,12 @@ export default function phpDateFormat(
   // ///////////////////////////////////////////////////////////
   const obj: TObj = {};
   obj.Y = dt.slice(0, 4); // YYYY
-  obj.y = dt.slice(2, 2); // YY
-  obj.m = dt.slice(5, 2); // 01-12
+  obj.y = dt.slice(2, 4); // YY
+  obj.m = dt.slice(5, 7); // 01-12
   obj.n = Number(obj.m); // 1-12
-  obj.M = MONTH[obj.n as number]!.slice(0, 3); // Jan-Dec
+  obj.M = MONTH[obj.n as number]?.slice(0, 3); // Jan-Dec
   obj.F = MONTH[obj.n as number]; // January-December
-  obj.d = dt.slice(8, 2); // 01-31
+  obj.d = dt.slice(8, 10); // 01-31
   obj.j = Number(obj.d); // 1-31
   obj.w = date.getDay(); // 0(Sun)-6(Sat)
   obj.N = (obj.w as number) < 1 ? 7 : obj.w; // 1(Mon)-7(Sun) .::ISO-8601
@@ -34,8 +42,8 @@ export default function phpDateFormat(
   obj.G = Number(obj.H); // 0-23
   obj.g = date.toLocaleTimeString().split(":").shift(); // 1-12
   obj.h = (obj.g as number) < 10 ? "0" + obj.g : obj.g; // 12hours 01-12
-  obj.i = dt.slice(14, 2) || "00"; // minutes 00-59
-  obj.s = dt.slice(17, 2) || "00"; // seconds 00-59
+  obj.i = dt.slice(14, 16) || "00"; // minutes 00-59
+  obj.s = dt.slice(17, 19) || "00"; // seconds 00-59
   obj.A = date.toLocaleTimeString().slice(-2); // AM|PM
   obj.a = obj.A?.toString().toLowerCase(); // am|pm
   // ///////////////////////////////////////////////////////////

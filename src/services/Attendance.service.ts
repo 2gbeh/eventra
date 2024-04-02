@@ -1,4 +1,4 @@
-import type { TCollection, TDocument, TId } from "@/types/common";
+import type { TCollection, TDocument, TId } from "@/types/common.type";
 
 export default class AttendanceService {
   static attended = (data: TCollection) =>

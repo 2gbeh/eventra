@@ -4,7 +4,7 @@ import PhUsers from '~icons/ph/users';
 import IonMale from '~icons/ion/male-outline';
 import IonFemale from '~icons/ion/female-outline';
 import useNavigator from "@/hooks/useNavigator";
-import { wrap, live } from '@/utils'
+import { wrap } from '@/utils'
 // 
 import EventService from "@/services/Event.service";
 
@@ -16,7 +16,7 @@ const props = defineProps({
 const nav = useNavigator()
 const viewEventAttendance = () => nav("attendance", { eventId: 1 })
 const data = EventService.eventPipe(props.item);
-const styles = EventService.styles(props.item);
+const styles = EventService.styles(props);
 </script>
 
 <template>

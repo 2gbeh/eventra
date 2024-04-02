@@ -2,7 +2,7 @@ import { ref, reactive, computed } from "vue";
 import AttendanceService from "@/services/Attendance.service";
 import attendance from "@/data/fake-attendance";
 //
-import type { TProps, TCollection, TDocument } from "@/types/common";
+import type { TProps, TCollection, TDocument } from "@/types/common.type";
 
 // import fakerHelper from "@/lib/faker-js/main";
 // fakerHelper.log(fakerHelper.getCollection);
