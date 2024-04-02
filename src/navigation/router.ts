@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import authRoutes from "./auth.routes";
-import dashboardRoutes from "./dashboard.routes";
+import authRoutes from "./auth.routes.js";
+import dashboardRoutes from "./dashboard.routes.js";
 import APP from "@/constants/APP";
 
 const router = createRouter({

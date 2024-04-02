@@ -1,5 +1,5 @@
 section {
-  padding: 15px 20px;
+  padding: 20px 20px 0;
 
   h1 {
     // color: #444;
@@ -12,5 +12,11 @@ section {
     color: var(--brand);
     font-size: 14px;
     font-weight: 500;
+  }
+
+  i {
+    color: var(--brand);
+    // font-size: 14px;
+    // font-weight: 500;
   }
 }

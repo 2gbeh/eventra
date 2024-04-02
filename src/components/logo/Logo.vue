@@ -1,13 +1,11 @@
-<script setup lang="ts">
+<script setup lang="">
 import useTheLogo from "./useLogo"
 
-const props = withDefaults(defineProps<{
-  size?: number | string
-  to?: string
-  hasTitle?: boolean
-  hasBorder?: boolean
-}>(), {
-  size: 32
+const props = defineProps({
+  size: { type: Number | String, default: 32 },
+  to: String,
+  hasTitle: Boolean,
+  hasBorder: Boolean,
 })
 
 const { styles } = useTheLogo(props)
@@ -16,7 +14,7 @@ const { styles } = useTheLogo(props)
 <template>
   <figure>
     <!--  -->
-    <RouterLink v-if="to" :to>
+    <RouterLink v-if="to" :to="to">
       <img src="/icon.png" :alt="$APP.name.toString()" :style="styles" />
     </RouterLink>
     <img v-else src="/icon.png" :alt="$APP.name.toString()" :style="styles" />

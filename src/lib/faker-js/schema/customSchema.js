@@ -1,6 +1,8 @@
-import { FakerHelper } from "../main";
+import { FakerHelper } from "../main.js";
 
-export default {
+const Users = {};
+
+const Events = {
   id: 1,
   thumbnail: "thumbnail",
   title: "product",
@@ -21,3 +23,15 @@ export default {
   },
   created_at: "date",
 };
+
+const Attendance = {
+  id: 1,
+  avatar: "avatar",
+  name: "otherNames",
+  sex: "sex",
+  email: "email",
+  status: "booleanInt",
+  created_at: "date",
+};
+
+export default Attendance;

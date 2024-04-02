@@ -1,8 +1,8 @@
-<script setup lang="ts">
-defineProps<{
-  h1: string
-  alt?: boolean
-}>()
+<script setup lang="">
+defineProps({
+  h1: String,
+  alt: Boolean
+})
 </script>
 
 <template>

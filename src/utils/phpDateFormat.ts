@@ -1,7 +1,21 @@
-"use strict";
+/* # USAGE 
+import date from '@/utils/phpDateFormat'
+date('now')
+date('now', '*')
+date('now', 'M j')
+date('1992-09-15', 'M j')
+date('1992-09-15 12:00:00', 'M j')
+date('1992-09-15T12:00:00.000Z', 'M j')
+*/
+
+type TObj = Record<string, unknown>;
+type TRes = string | TObj;
 
 // https://www.w3schools.com/php/func_date_date_format.asp
-export default function phpDateFormat(datetime = 'now', format = "M j, Y") {
+export default function phpDateFormat(
+  datetime = "now",
+  format = "M j, Y",
+): TRes {
   // 1992-09-15T12:00:00.000Z
   const dt =
     datetime && datetime.toString().length >= 10
@@ -9,29 +23,29 @@ export default function phpDateFormat(datetime = 'now', format = "M j, Y") {
       : new Date().toJSON();
   const date = new Date(dt);
   // ///////////////////////////////////////////////////////////
-  const obj = {};
-  obj.Y = dt.substr(0, 4); // YYYY
-  obj.y = dt.substr(2, 2); // YY
-  obj.m = dt.substr(5, 2); // 01-12
+  const obj: TObj = {};
+  obj.Y = dt.slice(0, 4); // YYYY
+  obj.y = dt.slice(2, 4); // YY
+  obj.m = dt.slice(5, 7); // 01-12
   obj.n = Number(obj.m); // 1-12
-  obj.M = MONTH[obj.n].slice(0, 3); // Jan-Dec
-  obj.F = MONTH[obj.n]; // January-December
-  obj.d = dt.substr(8, 2); // 01-31
+  obj.M = MONTH[obj.n as number]?.slice(0, 3); // Jan-Dec
+  obj.F = MONTH[obj.n as number]; // January-December
+  obj.d = dt.slice(8, 10); // 01-31
   obj.j = Number(obj.d); // 1-31
   obj.w = date.getDay(); // 0(Sun)-6(Sat)
-  obj.N = obj.w < 1 ? 7 : obj.w; // 1(Mon)-7(Sun) .::ISO-8601
-  obj.D = DAY[obj.w].slice(0, 3); // Sun-Sat
-  obj.l = DAY[obj.w]; // Saturday-Saturday .::lowercase 'L'
-  obj.S = ordinalSuffix(obj.j); // st, nd, rd or th
+  obj.N = (obj.w as number) < 1 ? 7 : obj.w; // 1(Mon)-7(Sun) .::ISO-8601
+  obj.D = DAY[obj.w as number].slice(0, 3); // Sun-Sat
+  obj.l = DAY[obj.w as number]; // Saturday-Saturday .::lowercase 'L'
+  obj.S = ordinalSuffix(obj.j as number); // st, nd, rd or th
   // ///////////////////////////////////////////////////////////
-  obj.H = dt.substr(11, 2) || "00"; // 24hours 00-23
+  obj.H = dt.slice(11, 2) || "00"; // 24hours 00-23
   obj.G = Number(obj.H); // 0-23
   obj.g = date.toLocaleTimeString().split(":").shift(); // 1-12
-  obj.h = obj.g < 10 ? "0" + obj.g : obj.g; // 12hours 01-12
-  obj.i = dt.substr(14, 2) || "00"; // minutes 00-59
-  obj.s = dt.substr(17, 2) || "00"; // seconds 00-59
+  obj.h = (obj.g as number) < 10 ? "0" + obj.g : obj.g; // 12hours 01-12
+  obj.i = dt.slice(14, 16) || "00"; // minutes 00-59
+  obj.s = dt.slice(17, 19) || "00"; // seconds 00-59
   obj.A = date.toLocaleTimeString().slice(-2); // AM|PM
-  obj.a = obj.A.toLowerCase(); // am|pm
+  obj.a = obj.A?.toString().toLowerCase(); // am|pm
   // ///////////////////////////////////////////////////////////
   obj.U = Date.now() / 1000; // seconds since 1970-01-01
   obj.u = Date.now() * 1000; // Microseconds (added in PHP 5.2.2)
@@ -41,7 +55,7 @@ export default function phpDateFormat(datetime = 'now', format = "M j, Y") {
   obj.O = date.getTimezoneOffset() / 60; // Timezone offset in hours (+0100)
   obj.e = date.toUTCString().split(" ").pop(); // UTC, GMT, Atlantic/Azores .::timezone identifier
   //
-  let res = "";
+  let res: TRes = "";
   switch (format) {
     case "*":
       res = obj;
@@ -54,12 +68,12 @@ export default function phpDateFormat(datetime = 'now', format = "M j, Y") {
       break;
     default:
       let arr = format.split("");
-      arr.map((f) => (res += obj?.[f] || f));
+      arr.map((f) => ((res as string) += obj?.[f] || f));
   }
   return res;
 }
 
-const ordinalSuffix = (i) => {
+const ordinalSuffix = (i: number) => {
   let res = "th";
   Object.entries({
     st: [1, 21, 31],
@@ -71,7 +85,7 @@ const ordinalSuffix = (i) => {
   return res;
 };
 
-const internetTime = (d) => {
+const internetTime = (d: Date) => {
   let n = d.getUTCMilliseconds();
   let len = n.toString().length;
   return len < 2 ? `00${n}` : len < 3 ? `0${n}` : n;

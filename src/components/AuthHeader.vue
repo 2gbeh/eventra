@@ -1,9 +1,9 @@
-<script setup lang="ts">
+<script setup lang="">
 import TablerHome from '~icons/tabler/home';
-defineProps<{
-  h1: string
-  p: string
-}>()
+defineProps({
+  h1: String,
+  p: String
+})
 </script>
 
 <template>

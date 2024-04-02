@@ -16,6 +16,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@carbon/vue": "^3.0.14",
     "@iconify/json": "^2.2.194",
     "@iconify/types": "^2.0.0",
     "@popperjs/core": "^2.11.8",

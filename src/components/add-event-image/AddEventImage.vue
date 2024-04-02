@@ -1,11 +1,11 @@
-<script setup lang="ts">
-import { ref, reactive } from "vue";
+<script setup lang="">
+import { ref } from "vue";
 import BiImageFill from '~icons/bi/image-fill';
 import useFileSelector from '@/hooks/useFileSelector';
 // 
-const props = defineProps<{
-  submitting: boolean,
-}>()
+const props = defineProps({
+  submitting: Boolean,
+})
 
 const { file, fileInputRef, handleFileInput, resetFileInput } = useFileSelector(props.submitting)
 </script>

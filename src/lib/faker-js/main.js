@@ -6,7 +6,7 @@
 import { faker } from "@faker-js/faker";
 import Seeders from "./Seeders";
 
-// import fakerHelper from "lib/faker-js/main";
+// import fakerHelper from "@/lib/faker-js/main";
 // fakerHelper.log(fakerHelper.getEvents);
 export class FakerHelper extends Seeders {
   // 0 - 9

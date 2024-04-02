@@ -1,8 +1,8 @@
-<script setup lang="ts">
+<script setup lang="">
 import TablerPlus from '~icons/tabler/plus';
-defineProps<{
-  handleClick?: (() => void) | null
-}>()
+defineProps({
+  handleClick: Function
+})
 </script>
 
 

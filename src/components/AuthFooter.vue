@@ -1,15 +1,15 @@
-<script setup lang="ts">
-defineProps<{
-  prompt: string
-  text: string
-  to: string
-}>()
+<script setup lang="">
+defineProps({
+  prompt: String,
+  text: String,
+  to: String
+})
 </script>
 
 <template>
   <footer>
     {{ prompt }}
-    <RouterLink :to>{{ text }}</RouterLink>
+    <RouterLink :to="to">{{ text }}</RouterLink>
   </footer>
 </template>
 
