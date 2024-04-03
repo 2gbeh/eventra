@@ -11,6 +11,7 @@ const props = defineProps({
 
 const nav = useNavigator()
 const goBack = () => nav(-1)
+const viewProfile = () => nav(['profile'])
 </script>
 
 <!-- Onament: Floating Bottom Navbsr -->
@@ -21,12 +22,18 @@ const goBack = () => nav(-1)
         <BackIcon />
       </i>
       <h1>{{ stack }}</h1>
-      <i @click="action" title="Options">
-        <OptionsIcon />
-      </i>
+      <template v-if="action">
+        <i @click="action" title="Options">
+          <OptionsIcon />
+        </i>
+      </template>
+      <template v-else>
+        <i class="ml-4">&nbsp;</i>
+      </template>
     </template>
+    <!--  -->
     <template v-else>
-      <figure class="flex-center">
+      <figure class="flex-center" @click="viewProfile">
         <img src="/images/avatar.png" alt="Avatar" />
         <figcaption>
           <small>Hello,</small>

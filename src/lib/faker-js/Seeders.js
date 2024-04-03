@@ -4,7 +4,7 @@ import userSchema from "./schema/userSchema";
 import personSchema from "./schema/personSchema";
 import postSchema from "./schema/postSchema";
 import notificationSchema from "./schema/notificationSchema";
-import customSchema from "./schema/customSchema.js";
+import customSchema, { customSchemaSize } from "./schema/customSchema.js";
 
 export default class Seeders extends FakerPost {
   log = (args) => console.log(JSON.stringify(args));
@@ -70,6 +70,6 @@ export default class Seeders extends FakerPost {
     return this.seed(customSchema, 1);
   }
   get getCollection() {
-    return this.seed(customSchema, 25);
+    return this.seed(customSchema, customSchemaSize ?? 25);
   }
 }
