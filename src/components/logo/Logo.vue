@@ -2,7 +2,7 @@
 import useTheLogo from "./useLogo"
 
 const props = defineProps({
-  size: { type: Number | String, default: 32 },
+  size: Number | String,
   to: String,
   hasTitle: Boolean,
   hasBorder: Boolean,

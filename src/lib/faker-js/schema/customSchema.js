@@ -34,4 +34,26 @@ const Attendance = {
   created_at: "date",
 };
 
-export default Attendance;
+const Brand = {
+  id: 1,
+  brand: () =>
+    FakerHelper.in([
+      "lexus",
+      "mercedes",
+      "hyundai",
+      "toyota",
+      "range rover",
+      "volkswagen",
+      "kia",
+      "honda",
+    ]),
+  created_at: "date",
+};
+
+const Model = {
+  id: 1,
+  created_at: "date",
+};
+
+export default Model;
+export const customSchemaSize = 9;

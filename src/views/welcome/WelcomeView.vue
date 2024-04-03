@@ -1,7 +1,7 @@
 <script setup lang="">
 import Button from '@/components/button/Button.vue'
 import fakerHelper from "@/lib/faker-js/main";
-// fakerHelper.log(fakerHelper.getArticles);
+// fakerHelper.log(fakerHelper.getCollection);
 </script>
 
 <template>
