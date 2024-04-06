@@ -13,4 +13,4 @@
   </figure>
 </template>
 
-<style scoped src="./ProfileContentImage.scss"></style>
+<style scoped src="./ProfileImage.scss"></style>
