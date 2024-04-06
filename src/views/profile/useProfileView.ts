@@ -38,6 +38,7 @@ export default function useProfileView() {
     },
   ];
   const submitting = ref(false);
+  const updating = ref(false);
   const showEditModal = ref(false);
   const editFormType = ref(0);
   const editFormHeader = computed(() => {
@@ -47,6 +48,12 @@ export default function useProfileView() {
   const toggleShowEdit = (type = -1) => {
     if (type > -1) editFormType.value = type;
     showEditModal.value = !showEditModal.value;
+  };
+  const handleUpdate = async () => {
+    updating.value = true;
+    await zzz();
+    updating.value = false;
+    toggleShowEdit(-1)
   };
   const handleSubmit = async () => {
     submitting.value = true;
@@ -58,10 +65,12 @@ export default function useProfileView() {
   return {
     formData,
     submitting,
+    updating,
     showEditModal,
     editFormType,
     editFormHeader,
     toggleShowEdit,
     handleSubmit,
+    handleUpdate
   };
 }

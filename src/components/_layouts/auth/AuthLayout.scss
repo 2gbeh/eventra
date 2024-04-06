@@ -13,7 +13,9 @@ form {
     font-weight: 500;
   }
 
-  input, select, textarea {
+  input,
+  select,
+  textarea {
     border-bottom: 1px solid #ddd;
     padding: 5px 0;
     width: 100%;
@@ -28,7 +30,8 @@ form {
 .form-group {
   margin: 20px 0 0;
 
-  a {
+  a,
+  span {
     color: var(--brand_blue);
     // color: var(--accent);
     margin: 10px 0;
@@ -37,6 +40,14 @@ form {
     font-weight: 500;
     display: flex;
     justify-content: flex-end;
+  }
+
+  span {
+    margin: 2px 0;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: flex-start;
   }
 }
 
@@ -49,5 +60,25 @@ form {
     position: absolute;
     right: 5px;
     top: 5px;
+  }
+}
+
+article {
+  margin: 10px 0;
+  text-align: center;
+
+  i {
+    // margin-bottom: 10px;
+    color: var(--brand);
+    font-size: 48px;
+    display: inline-block;
+  }
+
+  mark {
+    font-weight: 500;
+  }
+
+  p {
+    margin: 10px 0;
   }
 }

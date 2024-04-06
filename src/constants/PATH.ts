@@ -11,6 +11,7 @@ export default Object.freeze({
   verify_email: "/verify-email",
   //
   home: "/dashboard",
+  dashboard: "/dashboard",
   profile: "/dashboard/profile",
   settings: "/dashboard/settings",
   attendance: "/dashboard/attendance",
