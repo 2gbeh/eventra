@@ -1,4 +1,45 @@
+ul {
+  padding: 0 25px;
 
+  li {
+    margin: 15px 0;
+
+    i:first-child {
+      background-color: var(--brand_tint);
+      color: var(--brand);
+      border-radius: 10px;
+      margin-right: 12px;
+      width: 40px;
+      height: 40px;
+      font-size: 15px;
+    }
+
+    i:last-child {
+      color: #555;
+    }
+
+    b {
+      // color: var(--brand);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    p {
+      color: #555;
+      // margin-top: -2px;
+      font-size: 14px;
+
+      a {
+        margin-left: 5px;
+        color: blue;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 12px;
+        font-weight: 500;
+      }
+    }
+  }
+}
 
 footer {
   padding: 0 30px;
