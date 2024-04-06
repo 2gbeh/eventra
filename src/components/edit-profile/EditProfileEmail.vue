@@ -1,16 +1,17 @@
 <script setup lang="">
 import Button from '@/components/button/Button.vue'
+import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
 import EmailIcon from '~icons/ci/paper-plane';
 
 defineProps({
-  submitting: Boolean,
-  handleSubmit: Function
+  updating: Boolean,
+  handleUpdate: Function
 })
 </script>
 
 <template>
   <form>
-    <fieldset :disabled="submitting">
+    <fieldset :disabled="updating">
       <div class="form-group">
         <label for="email">
           Email Address
@@ -24,9 +25,9 @@ defineProps({
         <a>Can't update email address</a>
       </div>
       <!--  -->
-      <Button :action="handleSubmit" class="flex-center-center mt-8">
+      <Button :action="handleUpdate" class="flex-center-center mt-8">
         Update
-        <LoadingAlt v-if="submitting" :class="{ 'ml-1': submitting }" />
+        <LoadingAlt v-if="updating" :class="{ 'ml-1': updating }" />
       </Button>
     </fieldset>
   </form>

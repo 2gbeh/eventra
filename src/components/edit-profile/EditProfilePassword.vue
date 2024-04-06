@@ -1,18 +1,19 @@
 <script setup lang="">
 import Button from '@/components/button/Button.vue'
+import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
 import EyeIcon from '~icons/gg/eye'
 import KeyIcon from '~icons/tabler/key'
 import LockIcon from '~icons/mingcute/lock-line'
 
 defineProps({
-  submitting: Boolean,
-  handleSubmit: Function
+  updating: Boolean,
+  handleUpdate: Function
 })
 </script>
 
 <template>
   <form>
-    <fieldset :disabled="submitting">
+    <fieldset :disabled="updating">
       <div class="form-group">
         <label for="old_password">
           Current Password
@@ -49,9 +50,9 @@ defineProps({
         </div>
       </div>
       <!--  -->
-      <Button :action="handleSubmit" class="flex-center-center mt-8">
+      <Button :action="handleUpdate" class="flex-center-center mt-8">
         Update
-        <LoadingAlt v-if="submitting" :class="{ 'ml-1': submitting }" />
+        <LoadingAlt v-if="updating" :class="{ 'ml-1': updating }" />
       </Button>
     </fieldset>
   </form>

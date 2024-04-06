@@ -20,11 +20,13 @@ import useProfileView from "./useProfileView";
 const {
   formData,
   submitting,
+  updating,
   showEditModal,
   editFormType,
   editFormHeader,
   toggleShowEdit,
   handleSubmit,
+  handleUpdate
 } = useProfileView()
 </script>
 
@@ -35,9 +37,9 @@ const {
     <ProfileImage />
     <!--  -->
     <Modal v-if="showEditModal" :on-close="toggleShowEdit" :header="editFormHeader">
-      <EditProfileName v-if="editFormType == 0" />
-      <EditProfileEmail v-if="editFormType == 1" />
-      <EditProfilePassword v-if="editFormType == 2" />
+      <EditProfileName v-if="editFormType == 0" :updating="updating" :handleUpdate="handleUpdate"/>
+      <EditProfileEmail v-if="editFormType == 1" :updating="updating" :handleUpdate="handleUpdate"/>
+      <EditProfilePassword v-if="editFormType == 2" :updating="updating" :handleUpdate="handleUpdate"/>
     </Modal>
     <ul>
       <li v-for="(e, i) in formData" :key="i" class="flex-center-between">

@@ -28,4 +28,8 @@
   mark {
     @apply bg-brand_tint text-brand px-1
   }
+
+  i {
+    font-style: normal;
+  }
 }
