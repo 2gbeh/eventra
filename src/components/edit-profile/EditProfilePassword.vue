@@ -59,4 +59,3 @@ defineProps({
 </template>
 
 <style scoped src="./EditProfile.scss"></style>
-

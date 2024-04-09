@@ -21,14 +21,14 @@ export default class FakerCommon {
   get letter() {
     return faker.string.fromCharacters(
       "a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z".split(
-        ", "
-      )
+        ", ",
+      ),
     );
   }
   // ////////////////////////////////////////////////////////////
 
   // e175cac316a79afdd0ad3afb
-  get id() {
+  get mongoId() {
     return faker.database.mongodbObjectId();
   }
   // ptL0KpX_yRMI98JFr6B3n
@@ -91,5 +91,9 @@ export default class FakerCommon {
   // Quia hic sunt ducimus expedita quo impedit soluta. Quam impedit et ipsum optio. Unde dolores nulla nobis vero et aspernatur officiis.
   get paragraphs() {
     return faker.lorem.paragraphs({ min: 3, max: 5 });
+  }
+  // Lorem ipsum ...
+  get lorem() {
+    return `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corrupti nihil soluta sit molestias tenetur reprehenderit doloribus quos modi accusamus, officia libero repellendus temporibus dolorem fugiat rerum aut! Perspiciatis, natus aspernatur.`;
   }
 }

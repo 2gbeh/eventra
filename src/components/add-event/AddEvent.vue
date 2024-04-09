@@ -1,7 +1,8 @@
 <script setup lang="">
-import AddEventImage from '@/components/add-event-image/AddEventImage.vue'
+import AddEventImage from '@/components/add-event/AddEventImage.vue'
 import Button from '@/components/button/Button.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
+import SaveIcon from '~icons/zondicons/add-outline';
 // 
 defineProps({
   handleSubmit: Function,
@@ -52,6 +53,9 @@ defineProps({
       </div>
       <!--  -->
       <Button :action="handleSubmit" class="flex-center-center mt-8">
+        <i class="mr-2">
+          <SaveIcon />
+        </i>
         Add Event
         <LoadingAlt v-if="submitting" :class="{ 'ml-1': submitting }" />
       </Button>

@@ -32,6 +32,9 @@ export default class EventService {
     //
     return {
       ...e,
+      f_thumbnail: ImageHelper.src(e?.thumbnail, "/uploads/thumbnial-2.jpg"),
+      f_time: date(e.date, "h:i A"),
+      f_date: date(e.date, "M j"),
       f_date_day: date(e.date, "j"),
       f_date_month: date(e.date, "M"),
       f_user_name: e.user.other_names[0] + ", " + e.user.surname + ".",

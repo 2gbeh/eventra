@@ -10,7 +10,7 @@ import DateIcon from '~icons/material-symbols/date-range-outline'
 import Button from '@/components/button/Button.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
 import Modal from '@/components/Modal.vue'
-import ProfileImage from '@/components/profile-image/ProfileImage.vue'
+import EditProfileImage from '@/components/edit-profile/EditProfileImage.vue'
 import EditProfileName from '@/components/edit-profile/EditProfileName.vue'
 import EditProfileEmail from '@/components/edit-profile/EditProfileEmail.vue'
 import EditProfilePassword from '@/components/edit-profile/EditProfilePassword.vue'
@@ -34,7 +34,7 @@ const {
   <AppBar stack="Profile" />
   <SafeAreaView>
     <!--  -->
-    <ProfileImage />
+    <EditProfileImage />
     <!--  -->
     <Modal v-if="showEditModal" :on-close="toggleShowEdit" :header="editFormHeader">
       <EditProfileName v-if="editFormType == 0" :updating="updating" :handleUpdate="handleUpdate"/>

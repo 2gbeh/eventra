@@ -1,8 +1,25 @@
 import { FakerHelper } from "../main.js";
 
-const Users = {};
+const User = {
+  name: "other_names",
+  email: "email",
+  password: "password",
+  //
+  created_at: "date",
+  updated_at: null,
+  deleted_at: null,
+  id: "id",
+};
 
-const Events = {
+const Notification = {
+  id: 1,
+  title: "product",
+  summary: "description",
+  status: () => FakerHelper.in(Object.keys(["Unread", "Read"])),
+  created_at: "date",
+};
+
+const Event = {
   id: 1,
   thumbnail: "thumbnail",
   title: "product",
@@ -55,5 +72,5 @@ const Model = {
   created_at: "date",
 };
 
-export default Model;
-export const customSchemaSize = 9;
+export default User;
+export const customSchemaSize = 5;

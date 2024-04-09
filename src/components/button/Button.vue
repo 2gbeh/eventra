@@ -10,6 +10,7 @@ const props = withDefaults(defineProps<{
   variant?: keyof typeof EVariant
   action?: (() => void) | string | null
   isLink?: boolean
+  alt?: boolean
 }>(), {
   variant: 'solid'
 })
@@ -18,10 +19,10 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <RouterLink v-if="isLink" :to="action" :class="variant">
+  <RouterLink v-if="isLink" :to="action" :class="{ variant, 'danger': alt }">
     <slot />
   </RouterLink>
-  <button v-else type="button" @click="action" :class="variant">
+  <button v-else type="button" @click="action" :class="{ variant, 'danger': alt }">
     <slot />
   </button>
 </template>
