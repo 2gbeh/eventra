@@ -12,9 +12,8 @@ export default function useAttendanceView(props?: TProps) {
   const data = reactive<{ attendance: TCollection }>({ attendance });
   const dataPipe = computed(() => AttendanceService.attended(data.attendance));
   //
-  function toggleShowAll() {
-    showAll.value = !showAll.value;
-  }
+  const toggleShowAll = () => (showAll.value = !showAll.value);
+
   function toggleStatus(ev: Event) {
     let userId = (ev.target as HTMLInputElement).value;
     let { index, item } = AttendanceService.updateStatus(

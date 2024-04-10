@@ -10,9 +10,7 @@ export default function useHomeView() {
   const showOffcanvas = ref(false);
   const submitting = ref(false);
 
-  async function toggleOffcanvas() {
-    showOffcanvas.value = !showOffcanvas.value;
-  }
+  const toggleOffcanvas = () => (showOffcanvas.value = !showOffcanvas.value);
 
   async function handleSubmit() {
     submitting.value = true;

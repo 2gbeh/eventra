@@ -1,7 +1,14 @@
 <script setup lang="">
 import Button from '@/components/button/Button.vue'
 import fakerHelper from "@/lib/faker-js/main";
-// fakerHelper.log(fakerHelper.getCollection);
+import Fsdb from "@/lib/fsdb/fsdb";
+import { log } from "@/utils";
+// 
+// const data = fakerHelper.getCollection;
+// const User = new Fsdb(data);
+// // log(data);
+// log(User.trash(5))
+// log(User.restore(5))
 </script>
 
 <template>

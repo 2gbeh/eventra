@@ -1,4 +1,6 @@
 import type { TCollection, TDocument, TId } from "@/types/common.type";
+import { LIVE, rands } from "@/utils";
+import randomColor from "@/utils/randomColor";
 
 export default class AttendanceService {
   static attended = (data: TCollection) =>
@@ -16,4 +18,16 @@ export default class AttendanceService {
     }
     return { index: -1, item: {} };
   }
+
+  static avatarStack = (data: TCollection) => {
+    let [i, j, k, ...rest] = rands(0, data.length - 1, 3);
+    return {
+      total: data.length,
+      avatars: [
+        { ...data[i], color: randomColor() }, 
+        { ...data[j], color: randomColor() }, 
+        { ...data[k], color: randomColor() }, 
+      ],
+    };
+  };
 }

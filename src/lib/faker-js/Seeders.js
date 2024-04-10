@@ -1,9 +1,5 @@
 "use strict";
 import FakerPost from "./model/Post";
-import userSchema from "./schema/userSchema";
-import personSchema from "./schema/personSchema";
-import postSchema from "./schema/postSchema";
-import notificationSchema from "./schema/notificationSchema";
 import customSchema, { customSchemaSize } from "./schema/customSchema.js";
 
 export default class Seeders extends FakerPost {
@@ -11,8 +7,8 @@ export default class Seeders extends FakerPost {
 
   seed = (schema, size, strict = false) =>
     size > 1
-      ? this.factory(strict ? schema : { ...schema, id: "id" }, size)
-      : this.factory(strict ? schema : { ...schema, id: "id" }, 1).pop();
+      ? this.factory(strict ? schema : { ...schema, id: "mongoId" }, size)
+      : this.factory(strict ? schema : { ...schema, id: "mongoId" }, 1).pop();
 
   factory(schema, size = 10, asObject = false) {
     let [arr, obj] = [[], {}];
@@ -42,34 +38,17 @@ export default class Seeders extends FakerPost {
   }
 
   // ////////////////////////////////////////////////////////////////////
-  get getUser() {
-    return this.seed(userSchema, 1);
-  }
-  get getUsers() {
-    return this.seed(userSchema, 25);
-  }
-  get getPerson() {
-    return this.seed(personSchema, 1);
-  }
-  get getPeople() {
-    return this.seed(personSchema, 25);
-  }
-  get getPost() {
-    return this.seed(postSchema, 1);
-  }
-  get getPosts() {
-    return this.seed(postSchema, 25);
-  }
-  get getNotification() {
-    return this.seed(notificationSchema, 1);
-  }
-  get getNotifications() {
-    return this.seed(notificationSchema, 5);
-  }
   get getDocument() {
     return this.seed(customSchema, 1);
   }
   get getCollection() {
-    return this.seed(customSchema, customSchemaSize ?? 25);
+    let arr = this.seed(customSchema, customSchemaSize ?? 25);
+    if (
+      customSchema?.id &&
+      (typeof customSchema.id === "number" || customSchema.id === "id")
+    ) {
+      arr.forEach((e, i) => (e.id = i + 1));
+    }
+    return arr;
   }
 }

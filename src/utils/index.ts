@@ -10,6 +10,9 @@ export const NAIRA = "₦";
 // dollar sign
 export const DOLLAR = "$";
 
+// check internet status
+export const LIVE = window?.navigator?.onLine;
+
 // number format
 export const $ = (n: T, usd = false) =>
   n
@@ -33,8 +36,7 @@ export const dd = (...args: TArgs) =>
 
 // debug in terminal
 export const log = (...args: TArgs) => {
-  console.clear();
-  console.log(args);
+  console.log(JSON.stringify(args));
 };
 
 // today's date in milliseconds(1693166015389) or ISO (1970-01-01T00:00:00.000Z)
@@ -78,8 +80,17 @@ export const bool = (x: unknown, y: unknown) =>
   x && y ? (Math.random() < 0.5 ? x : y) : Math.random() < 0.5;
 
 // random no. btw x, y both inclusive
-export const rand = (x = 0, y = 9) =>
+export const rand = (x = 0, y = 9, z = 1): number =>
   Math.floor(Math.random() * (y - x + 1)) + x;
+
+// random nos. btw x, y both inclusive
+export const rands = (x = 0, y = 9, z = 1): number[] => {
+  let arr = [];
+  for (let i = 1; i <= z; i++) {
+    arr.push(rand(x, y));
+  }
+  return arr as number[];
+};
 
 // mask string
 export const mask = (x: T, top = 3, tip = 3) => {
@@ -100,9 +111,6 @@ export const wrap = (x: T, len = 160) => {
   return str.length > len ? str.slice(0, len - 3) + "..." : str;
 };
 
-// check internet status
-export const live = window?.navigator?.onLine;
-
 // case-insensitive string search
 export const iMatch = (str: T, substr: T) =>
   str.toString().search(new RegExp(substr.toString(), "i")) > -1;
@@ -118,3 +126,10 @@ export const isset = (...args: TArgs) => {
       return args[0] ? args[0].toString().trim().length > 0 : false;
   }
 };
+
+export const inis = (str: string) =>
+  str
+    .split(" ")
+    .map((e) => e[0])
+    .join("")
+    .slice(0, 2);

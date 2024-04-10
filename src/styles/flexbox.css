@@ -21,6 +21,14 @@
     @apply flex justify-between
   }
 
+  .flex-around {
+    @apply flex justify-around
+  }
+
+  .flex-evenly {
+    @apply flex justify-evenly
+  }
+
   .flex-center-start {
     @apply flex items-center justify-start
   }
@@ -35,6 +43,14 @@
 
   .flex-center-between {
     @apply flex items-center justify-between
+  }
+
+  .flex-center-around {
+    @apply flex items-center justify-around
+  }
+
+  .flex-center-evenly {
+    @apply flex items-center justify-evenly
   }
 
 }

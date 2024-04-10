@@ -1,0 +1,31 @@
+form {
+  padding: 0 25px 25px;
+
+  label {
+    color: var(--brand);
+    font-size: 14px;
+    font-weight: 500;
+
+    var {
+      color: #e11;
+      margin-left: 2px;
+      vertical-align: middle;
+    }
+  }
+
+  input, select, textarea {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 0 5px 5px;
+    width: 100%;
+    display: block;
+
+    &:focus {
+      border-color: var(--accent);
+    }
+  }
+}
+
+.form-group {
+  margin: 12px 0 0;
+}
