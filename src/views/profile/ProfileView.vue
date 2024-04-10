@@ -1,16 +1,16 @@
 <script setup lang="">
-import VerifiedIcon from '~icons/ic/round-verified'
 import LogoutIcon from '~icons/tabler/logout-2'
 import ChevronIcon from '~icons/fluent/chevron-right-12-filled'
 import UserIcon from '~icons/bx/user'
 import EmailIcon from '~icons/ci/paper-plane';
-import KeyIcon from '~icons/tabler/key'
+import PasswordIcon from '~icons/tabler/key'
 import RoleIcon from '~icons/uil/accessible-icon-alt';
 import DateIcon from '~icons/material-symbols/date-range-outline'
+// 
 import Button from '@/components/button/Button.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
+import ProfileImage from '@/components/ProfileImage.vue'
 import ModalOverlay from '@/components/ModalOverlay.vue'
-import EditProfileImage from '@/components/edit-profile/EditProfileImage.vue'
 import EditProfileName from '@/components/edit-profile/EditProfileName.vue'
 import EditProfileEmail from '@/components/edit-profile/EditProfileEmail.vue'
 import EditProfilePassword from '@/components/edit-profile/EditProfilePassword.vue'
@@ -34,7 +34,7 @@ const {
   <AppBar stack="Profile" />
   <SafeAreaView>
     <!--  -->
-    <EditProfileImage />
+    <ProfileImage src="/images/etugbeh.png" h1="Emmanuel Tugbeh" p="etugbeh@outlook.com" isVerified />
     <!--  -->
     <ModalOverlay v-if="showEditModal" :on-close="toggleShowEdit" :header="editFormHeader">
       <EditProfileName v-if="editFormType == 0" :updating="updating" :handleUpdate="handleUpdate"/>
@@ -47,7 +47,7 @@ const {
           <i class="flex-center-center">
             <UserIcon v-if="e.label === 'Name'" />
             <EmailIcon v-if="e.label === 'Email'" />
-            <KeyIcon v-if="e.label === 'Password'" />
+            <PasswordIcon v-if="e.label === 'Password'" />
             <RoleIcon v-if="e.label === 'Role'" />
             <DateIcon v-if="e.label === 'Joined'" />
           </i>

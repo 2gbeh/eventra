@@ -14,7 +14,7 @@ const props = defineProps({
 })
 
 const nav = useNavigator()
-const viewEventAttendance = () => nav("attendance", { eventId: 1 })
+const viewEventAttendance = () => nav("attendance", { eventId: props.index })
 const data = EventService.eventPipe(props.item);
 const styles = EventService.styles(props);
 </script>
