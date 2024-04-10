@@ -4,5 +4,5 @@ export default function useNotFound() {
   const route = useRoute();
   const router = useRouter();
 
-  return { path: route.path, handleGoBack: () => router.go(-1) };
+  return { path: route.path, goBack: () => router.go(-1) };
 }

@@ -1,42 +1,11 @@
 import { computed, ref } from "vue";
 import useNavigator from "@/hooks/useNavigator";
 import { zzz } from "@/utils";
+import { formData } from "./PROFILE_VIEW";
 
 export default function useProfileView() {
   const nav = useNavigator();
   //
-  const formData = [
-    {
-      label: "Name",
-      value: "Emmanuel Tugbeh",
-      isVerified: false,
-      canEdit: true,
-    },
-    {
-      label: "Email",
-      value: "etugbeh@outlook.com",
-      isVerified: true,
-      canEdit: true,
-    },
-    {
-      label: "Password",
-      value: "**** ****",
-      isVerified: false,
-      canEdit: true,
-    },
-    {
-      label: "Role",
-      value: "WEBMASTER",
-      isVerified: false,
-      canEdit: false,
-    },
-    {
-      label: "Joined",
-      value: "15/09/1992",
-      isVerified: false,
-      canEdit: false,
-    },
-  ];
   const submitting = ref(false);
   const updating = ref(false);
   const showEditModal = ref(false);
@@ -45,22 +14,22 @@ export default function useProfileView() {
     return ["Edit Name", "Edit Email", "Edit Password"][editFormType.value];
   });
   //
-  const toggleShowEdit = (type = -1) => {
+  function toggleShowEdit(type = -1) {
     if (type > -1) editFormType.value = type;
     showEditModal.value = !showEditModal.value;
-  };
-  const handleUpdate = async () => {
+  }
+  async function handleUpdate() {
     updating.value = true;
     await zzz();
     updating.value = false;
-    toggleShowEdit(-1)
-  };
-  const handleSubmit = async () => {
+    toggleShowEdit(-1);
+  }
+  async function handleSubmit() {
     submitting.value = true;
     await zzz();
     submitting.value = false;
     nav(["login"]);
-  };
+  }
   //
   return {
     formData,
@@ -71,6 +40,6 @@ export default function useProfileView() {
     editFormHeader,
     toggleShowEdit,
     handleSubmit,
-    handleUpdate
+    handleUpdate,
   };
 }

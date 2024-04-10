@@ -10,6 +10,9 @@ export const NAIRA = "₦";
 // dollar sign
 export const DOLLAR = "$";
 
+// check internet status
+export const LIVE = window?.navigator?.onLine;
+
 // number format
 export const $ = (n: T, usd = false) =>
   n
@@ -108,9 +111,6 @@ export const wrap = (x: T, len = 160) => {
   return str.length > len ? str.slice(0, len - 3) + "..." : str;
 };
 
-// check internet status
-export const live = window?.navigator?.onLine;
-
 // case-insensitive string search
 export const iMatch = (str: T, substr: T) =>
   str.toString().search(new RegExp(substr.toString(), "i")) > -1;
@@ -126,3 +126,10 @@ export const isset = (...args: TArgs) => {
       return args[0] ? args[0].toString().trim().length > 0 : false;
   }
 };
+
+export const inis = (str: string) =>
+  str
+    .split(" ")
+    .map((e) => e[0])
+    .join("")
+    .slice(0, 2);

@@ -10,7 +10,7 @@ defineProps({
     <div class="root-wrapper-center">
       <!-- WITH HERADER -->
       <template v-if="header">
-        <div class="container mt-10">
+        <div class="container">
           <div class="wrapper">
             <section class="flex-center-between">
               <h1>{{ header }}</h1>
@@ -30,6 +30,7 @@ defineProps({
 
 <style scoped lang="scss">
 .container {
+  margin-top: 40px;
   padding: 40px 20px;
 }
 

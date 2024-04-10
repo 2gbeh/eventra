@@ -7,7 +7,7 @@ export default [
     children: [
       {
         path: "",
-        name: "home",
+        name: "dashboard",
         component: () => import("@/views/home/HomeView.vue"),
         meta: { title: "Home" },
       },

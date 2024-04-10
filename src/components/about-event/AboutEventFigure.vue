@@ -1,8 +1,5 @@
 <script setup lang="">
-import EditIcon from '~icons/akar-icons/edit';
 import AvatarStack from '../avatars/AvatarStack.vue'
-// 
-import { wrap, rand } from "@/utils";
 
 const props = defineProps({
   thumbnail: String,
@@ -12,27 +9,30 @@ const props = defineProps({
 </script>
 
 <template>
- <figure>
-      <div class="relative">
-        <img :src="thumbnail" alt="" />
-        <div class="flex-center-center">
-          <ul class="flex-center gap-2">
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-            <li>&nbsp;</li>
-          </ul>
-        </div>
+  <figure>
+    <div class="relative">
+      <img :src="thumbnail" alt="" />
+      <!--  -->
+      <div class="flex-center-center">
+        <ul class="flex-center gap-2">
+          <li>&nbsp;</li>
+          <li>&nbsp;</li>
+          <li>&nbsp;</li>
+        </ul>
       </div>
-      <figcaption class="container">
-        <h1 class="flex-center-between">
-          {{ title }}
-          <i title="Edit">
-            <EditIcon />
-          </i>
-        </h1>
-        <AvatarStack :total="attendance.total" :images="attendance.avatars" alt />
-      </figcaption>
-    </figure>
+    </div>
+    <figcaption>
+      <h1 class="flex-center-between">
+        {{ title }}
+        <!--  -->
+        <i title="Edit">
+          <slot />
+        </i>
+      </h1>
+      <!--  -->
+      <AvatarStack v-bind="attendance" alt />
+    </figcaption>
+  </figure>
 </template>
 
 <style scoped src="./AboutEventFigure.scss"></style>

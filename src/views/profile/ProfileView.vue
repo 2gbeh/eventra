@@ -9,7 +9,7 @@ import RoleIcon from '~icons/uil/accessible-icon-alt';
 import DateIcon from '~icons/material-symbols/date-range-outline'
 import Button from '@/components/button/Button.vue'
 import LoadingAlt from '@/components/loaders/LoadingAlt.vue'
-import Modal from '@/components/Modal.vue'
+import ModalOverlay from '@/components/ModalOverlay.vue'
 import EditProfileImage from '@/components/edit-profile/EditProfileImage.vue'
 import EditProfileName from '@/components/edit-profile/EditProfileName.vue'
 import EditProfileEmail from '@/components/edit-profile/EditProfileEmail.vue'
@@ -36,11 +36,11 @@ const {
     <!--  -->
     <EditProfileImage />
     <!--  -->
-    <Modal v-if="showEditModal" :on-close="toggleShowEdit" :header="editFormHeader">
+    <ModalOverlay v-if="showEditModal" :on-close="toggleShowEdit" :header="editFormHeader">
       <EditProfileName v-if="editFormType == 0" :updating="updating" :handleUpdate="handleUpdate"/>
       <EditProfileEmail v-if="editFormType == 1" :updating="updating" :handleUpdate="handleUpdate"/>
       <EditProfilePassword v-if="editFormType == 2" :updating="updating" :handleUpdate="handleUpdate"/>
-    </Modal>
+    </ModalOverlay>
     <ul>
       <li v-for="(e, i) in formData" :key="i" class="flex-center-between">
         <div class="flex-center">

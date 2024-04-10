@@ -11,7 +11,7 @@ export default function useLoginView() {
   async function handleSubmit() {
     submitting.value = true;
     await zzz();
-    router.push(_.$PATH.home.toString());
+    router.push(_.$PATH.dashboard.toString());
   }
 
   return { handleSubmit, submitting };
