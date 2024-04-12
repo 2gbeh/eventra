@@ -1,7 +1,7 @@
 <script setup lang="">
 import ToggleInput from '@/components/ToggleInput.vue'
 import ImageHelper from '@/utils/helpers/ImageHelper'
-import { LIVE, wrap, inis } from '@/utils'
+import { LIVE, wrap, abbr } from '@/utils'
 // 
 const props = defineProps({
   total: Number,
@@ -25,7 +25,7 @@ const tw = {
     </template>
     <template v-else>
       <div v-for="(e, i) of avatars" :key="i" :class="tw.div" :style="`background-color: ${e.color};`">
-        <span :class="tw.span">{{ inis(e.name) }}</span>
+        <span :class="tw.span">{{ abbr(e.name) }}</span>
       </div>
     </template>
     <!--  -->

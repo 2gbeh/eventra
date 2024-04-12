@@ -1,5 +1,6 @@
 import type { TCollection, TDocument, TId } from "@/types/common.type";
-import { LIVE, rands } from "@/utils";
+import { LIVE, rands, gender } from "@/utils";
+import ImageHelper from "@/utils/helpers/ImageHelper";
 import randomColor from "@/utils/randomColor";
 
 export default class AttendanceService {
@@ -24,10 +25,21 @@ export default class AttendanceService {
     return {
       total: data.length,
       avatars: [
-        { ...data[i], color: randomColor() }, 
-        { ...data[j], color: randomColor() }, 
-        { ...data[k], color: randomColor() }, 
+        { ...data[i], color: randomColor() },
+        { ...data[j], color: randomColor() },
+        { ...data[k], color: randomColor() },
       ],
+    };
+  };
+
+  static attendee = (data: TDocument) => {
+    let sex = data?.sex ? "-" + data.sex.toString().toLowerCase() : "";
+    let fallback = `/images/avatar${sex}.png`;
+    // 
+    return {
+      ...data,
+      f_avatar: ImageHelper.src(data?.avatar as string, fallback),
+      gender: gender(data?.sex as string, null)
     };
   };
 }

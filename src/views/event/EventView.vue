@@ -39,7 +39,7 @@ const {
   <SafeAreaView>
     <!--  -->
     <AboutEventFigure :thumbnail="event.f_thumbnail" :title="event.title" :attendance="attendance">
-      <EditIcon />
+      <EditIcon @click="toggleEditModal" />
     </AboutEventFigure>
 
     <!--  -->
@@ -55,10 +55,10 @@ const {
       <AboutEventMeta :date="event.f_date" :time="event.f_time" :venue="event.venue" />
       <!--  -->
       <Button :action="toggleDeleteModal" class="flex-center-center" alt>
-        <i class="mr-2">
+        <!-- <i class="mr-2">
           <TrashIcon />
-        </i>
-        Delete
+        </i> -->
+        Delete Event
       </Button>
     </section>
     

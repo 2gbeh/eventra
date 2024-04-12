@@ -1,6 +1,7 @@
 <script setup lang="">
 import ToggleInput from '@/components/ToggleInput.vue'
 import ImageHelper from '@/utils/helpers/ImageHelper'
+import useNavigator from '@/hooks/useNavigator'
 import { wrap } from '@/utils'
 // 
 const props = defineProps({
@@ -10,12 +11,14 @@ const props = defineProps({
   toggleStatus: Function,
 })
 
+const nav = useNavigator(props.index)
+const viewUser = () => nav("user", 'userId')
 </script>
 
 <template>
   <div class="flex-center-between container">
     <!--  -->
-    <figure class="flex-center">
+    <figure class="flex-center" @click="viewUser">
       <img :src="ImageHelper.src(item.avatar, '/images/avatar.png')" alt="" />
       <figcaption>
         <h1>{{ item.name }}</h1>
