@@ -3,7 +3,7 @@ import VerifiedIcon from '~icons/ic/round-verified'
 
 defineProps({
   src: String,
-  size: Number,
+  size: Number | Number,
   h1: String,
   p: String,
   isVerified: Boolean

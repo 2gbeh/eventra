@@ -127,9 +127,29 @@ export const isset = (...args: TArgs) => {
   }
 };
 
-export const inis = (str: string) =>
+export const abbr = (str: string) =>
   str
     .split(" ")
     .map((e) => e[0])
     .join("")
     .slice(0, 2);
+
+export const sex = (x?: T, fallback: unknown = null) => {
+  if (x) {
+    if (typeof x === "number") {
+      x == 1 ? "M" : x == 2 ? "F" : fallback;
+    } else {
+      x == "Male" ? "M" : x == "Female" ? "F" : fallback;
+    }
+  }
+};
+
+export const gender = (x?: T, fallback: unknown = null) => {
+  if (x) {
+    if (typeof x === "number") {
+      x == 1 ? "Male" : x == 2 ? "Female" : fallback;
+    } else {
+      x == "M" ? "Male" : x == "F" ? "Female" : fallback;
+    }
+  }
+};

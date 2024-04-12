@@ -43,7 +43,7 @@ export default [
         name: "user",
         component: () => import("@/views/user/UserView.vue"),
         props: true,
-        meta: { title: "User Details" },
+        meta: { title: "Attendee" },
       },
     ],
   },
