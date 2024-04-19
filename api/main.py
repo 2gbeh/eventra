@@ -99,3 +99,7 @@ def delete_one_event_from_firebase():
         "message": "Could not delete an event from firebase",
         "data": None
     }
+
+
+if __name__ == "__main__":
+    apiflask.run(debug=False, host="0.0.0.0", port=8080)
