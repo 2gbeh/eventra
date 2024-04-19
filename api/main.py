@@ -22,6 +22,15 @@ def server_error(error):
     }
 
 
+@apiflask.errorhandler(502)
+def bad_gateway_error(error):
+    return {
+        "status": False,
+        "message": "This path does not exist, consult the developer",
+        "data": None
+    }
+
+
 # root api path
 @apiflask.get("/")
 def index():
