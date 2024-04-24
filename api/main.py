@@ -43,7 +43,7 @@ def index():
 
 
 # get all event from firebase
-@apiflask.get("/event")
+@apiflask.get("/events")
 def get_all_event_from_firebase():
     return {
         "status": True,
@@ -53,7 +53,7 @@ def get_all_event_from_firebase():
 
 
 # get one event from firebase
-@apiflask.get("/event/<eventId>")
+@apiflask.get("/events/<eventId>")
 def get_one_event_from_firebase():
     return {
         "status": True,
@@ -62,8 +62,8 @@ def get_one_event_from_firebase():
     }
 
 
-# add event to firebase
-@apiflask.post("/event")
+# add events to firebase
+@apiflask.post("/events")
 def add_event_to_firebase():
     return {
         "status": True,
@@ -73,7 +73,7 @@ def add_event_to_firebase():
 
 
 # update an event in firebase
-@apiflask.patch("/event/<event_id>")
+@apiflask.patch("/events/<event_id>")
 def update_event_in_firebase():
     return {
         "status": True,
@@ -83,7 +83,7 @@ def update_event_in_firebase():
 
 
 # update an event in firebase
-@apiflask.put("/event/<event_id>")
+@apiflask.put("/events/<event_id>")
 def replace_event_in_firebase():
     return {
         "status": True,
@@ -93,7 +93,7 @@ def replace_event_in_firebase():
 
 
 # delete all event from firebase
-@apiflask.delete("/event")
+@apiflask.delete("/events")
 def delete_all_event_from_firebase():
     return {
         "status": True,
@@ -103,7 +103,7 @@ def delete_all_event_from_firebase():
 
 
 # delete one event from firebase
-@apiflask.delete("/event/<event_id>")
+@apiflask.delete("/events/<event_id>")
 def delete_one_event_from_firebase():
     return {
         "status": True,
