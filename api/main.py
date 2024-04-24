@@ -6,9 +6,10 @@ apiflask = APIFlask(__name__)
 # CATCH WRONG URLs
 @apiflask.errorhandler(404)
 def route_not_found(error):
+    print(error)
     return {
         "status": False,
-        "message": "This route does not exist",
+        "message": f"{error}",
         "data": None
     }
 
@@ -17,7 +18,7 @@ def route_not_found(error):
 def server_error(error):
     return {
         "status": False,
-        "message": "There was an error with the server",
+        "message": f"{error}",
         "data": None
     }
 
@@ -26,7 +27,7 @@ def server_error(error):
 def bad_gateway_error(error):
     return {
         "status": False,
-        "message": "This path does not exist, consult the developer",
+        "message": f"{error}",
         "data": None
     }
 
@@ -42,7 +43,7 @@ def index():
 
 
 # get all event from firebase
-@apiflask.get("/get_all_event")
+@apiflask.get("/event")
 def get_all_event_from_firebase():
     return {
         "status": True,
@@ -52,7 +53,7 @@ def get_all_event_from_firebase():
 
 
 # get one event from firebase
-@apiflask.get("/get_one_event/<eventId>")
+@apiflask.get("/event/<eventId>")
 def get_one_event_from_firebase():
     return {
         "status": True,
@@ -62,7 +63,7 @@ def get_one_event_from_firebase():
 
 
 # add event to firebase
-@apiflask.get("/add_event")
+@apiflask.post("/event")
 def add_event_to_firebase():
     return {
         "status": True,
@@ -72,7 +73,7 @@ def add_event_to_firebase():
 
 
 # update an event in firebase
-@apiflask.get("/update_event")
+@apiflask.patch("/event/<event_id>")
 def update_event_in_firebase():
     return {
         "status": True,
@@ -81,8 +82,18 @@ def update_event_in_firebase():
     }
 
 
+# update an event in firebase
+@apiflask.put("/event/<event_id>")
+def replace_event_in_firebase():
+    return {
+        "status": True,
+        "message": "Could not update event in firebase",
+        "data": None
+    }
+
+
 # delete all event from firebase
-@apiflask.get("/delete_all_event")
+@apiflask.delete("/event")
 def delete_all_event_from_firebase():
     return {
         "status": True,
@@ -92,7 +103,7 @@ def delete_all_event_from_firebase():
 
 
 # delete one event from firebase
-@apiflask.get("/delete_one_event/<eventId>")
+@apiflask.delete("/event/<event_id>")
 def delete_one_event_from_firebase():
     return {
         "status": True,
