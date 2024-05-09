@@ -92,16 +92,6 @@ def replace_event_in_firebase():
     }
 
 
-# delete all event from firebase
-@apiflask.delete("/events")
-def delete_all_event_from_firebase():
-    return {
-        "status": True,
-        "message": "Could not delete all event from firebase",
-        "data": None
-    }
-
-
 # delete one event from firebase
 @apiflask.delete("/events/<event_id>")
 def delete_one_event_from_firebase():
