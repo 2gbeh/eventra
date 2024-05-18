@@ -1,12 +1,16 @@
 from apiflask import APIFlask
 
+from ApiManager import ApiManager
+from Constants import FIREBASE_EVENTRA_COLLECTION
+
 apiflask = APIFlask(__name__)
+
+apiManager: ApiManager = ApiManager()
 
 
 # CATCH WRONG URLs
 @apiflask.errorhandler(404)
 def route_not_found(error):
-    print(error)
     return {
         "status": False,
         "message": f"{error}",
@@ -45,10 +49,12 @@ def index():
 # get all event from firebase
 @apiflask.get("/events")
 def get_all_event_from_firebase():
+    data = apiManager.readAllDocument(collection=FIREBASE_EVENTRA_COLLECTION)
+    print(data)
     return {
         "status": True,
         "message": "Could not get all event from firebase",
-        "data": None
+        "data": data
     }
 
 
@@ -65,6 +71,7 @@ def get_one_event_from_firebase():
 # add events to firebase
 @apiflask.post("/events")
 def add_event_to_firebase():
+    apiManager.createDocument(collection=FIREBASE_EVENTRA_COLLECTION, document_data={"name": "Aigboje Ohiore"})
     return {
         "status": True,
         "message": "Could not add event in firebase",
