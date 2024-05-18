@@ -1,6 +1,6 @@
+from flask import request
 from apiflask import APIFlask
-
-from ApiManager import ApiManager
+from api.db.ApiManager import ApiManager
 from Constants import FIREBASE_EVENTRA_COLLECTION
 
 apiflask = APIFlask(__name__)
@@ -8,9 +8,18 @@ apiflask = APIFlask(__name__)
 apiManager: ApiManager = ApiManager()
 
 
-# CATCH WRONG URLs
+# ERROR HANDLING ============================================================
 @apiflask.errorhandler(404)
 def route_not_found(error):
+    return {
+        "status": False,
+        "message": f"{error}",
+        "data": None
+    }
+
+
+@apiflask.errorhandler(400)
+def bad_request(error):
     return {
         "status": False,
         "message": f"{error}",
@@ -36,9 +45,17 @@ def bad_gateway_error(error):
     }
 
 
+# **********************************************************************************
+
+# API HANDLING ===================================================================
 # root api path
+
 @apiflask.get("/")
 def index():
+    """
+    This does not do anything
+    :return:
+    """
     return {
         "status": True,
         "message": "Hello from Eventra",
@@ -49,8 +66,12 @@ def index():
 # get all event from firebase
 @apiflask.get("/events")
 def get_all_event_from_firebase():
+    """
+    This returns every document in the eventra collection.
+    NOTE be careful with this since could take too long
+    :return:
+    """
     data = apiManager.readAllDocument(collection=FIREBASE_EVENTRA_COLLECTION)
-    print(data)
     return {
         "status": True,
         "message": "Could not get all event from firebase",
@@ -59,54 +80,70 @@ def get_all_event_from_firebase():
 
 
 # get one event from firebase
-@apiflask.get("/events/<eventId>")
-def get_one_event_from_firebase():
-    return {
-        "status": True,
-        "message": "Could not get an event from firebase",
-        "data": None
-    }
+@apiflask.get("/events/<doc_id>")
+def get_one_event_from_firebase(doc_id: str):
+    """Only one document is gotten from the database"""
+    data = apiManager.readDocument(collection=FIREBASE_EVENTRA_COLLECTION, doc_id=doc_id)
+    return data.toDict()
 
 
 # add events to firebase
 @apiflask.post("/events")
 def add_event_to_firebase():
-    apiManager.createDocument(collection=FIREBASE_EVENTRA_COLLECTION, document_data={"name": "Aigboje Ohiore"})
-    return {
-        "status": True,
-        "message": "Could not add event in firebase",
-        "data": None
-    }
+    """
+    Add event to database the request method applicable is json. eg
+    {"name": "John Doe"};  When adding / creating an event an id must be pass,
+    in this case using phone number or email as ID allowed since those are unique.
+    This will be updated in the future
+    :return: 
+    """
+    data = apiManager.createDocument(
+        collection=FIREBASE_EVENTRA_COLLECTION,
+        document_data=request.json
+    )
+    return data.toDict()
 
 
 # update an event in firebase
-@apiflask.patch("/events/<event_id>")
-def update_event_in_firebase():
-    return {
-        "status": True,
-        "message": "Could not update event in firebase",
-        "data": None
-    }
+@apiflask.patch("/events/<doc_id>")
+def update_event_in_firebase(doc_id: str):
+    """ The patch method is to update a particular place in the database,
+     where the request json key is true. If the data is not in database, it is created.
+     """
+    data = apiManager.updateDocument(
+        collection=FIREBASE_EVENTRA_COLLECTION,
+        doc_id=doc_id,
+        update_data=request.json
+    )
+    return data.toDict()
 
 
 # update an event in firebase
-@apiflask.put("/events/<event_id>")
-def replace_event_in_firebase():
-    return {
-        "status": True,
-        "message": "Could not update event in firebase",
-        "data": None
-    }
+@apiflask.put("/events/<doc_id>")
+def replace_event_in_firebase(doc_id: str):
+    """ The 'put' method is to update a particular place in the database,
+     where the request json key is true. If the data is not in database, it is created.
+     """
+    print(doc_id)
+    data = apiManager.updateDocument(
+        collection=FIREBASE_EVENTRA_COLLECTION,
+        doc_id=doc_id,
+        update_data=request.json
+    )
+    return data.toDict()
 
 
 # delete one event from firebase
-@apiflask.delete("/events/<event_id>")
-def delete_one_event_from_firebase():
-    return {
-        "status": True,
-        "message": "Could not delete an event from firebase",
-        "data": None
-    }
+@apiflask.delete("/events/<doc_id>")
+def delete_one_event_from_firebase(doc_id: str):
+    """ The 'delete' method is to delete a particular document from the database,
+     where the doc id is true
+     """
+    data = apiManager.deleteDocument(
+        collection=FIREBASE_EVENTRA_COLLECTION,
+        doc_id=doc_id,
+    )
+    return data.toDict()
 
 
 if __name__ == "__main__":
