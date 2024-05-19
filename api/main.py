@@ -1,7 +1,7 @@
 from flask import request
 from apiflask import APIFlask
+from api.Constants import FIREBASE_EVENTRA_COLLECTION
 from api.db.ApiManager import ApiManager
-from Constants import FIREBASE_EVENTRA_COLLECTION
 
 apiflask = APIFlask(__name__)
 
